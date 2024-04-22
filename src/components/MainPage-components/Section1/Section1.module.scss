@@ -1,0 +1,95 @@
+@use "../../utils" as *;
+@use "../../global" as *;
+
+.section1 {
+  display: flex;
+  flex-direction: column;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 100%;
+  max-width: 1920px;
+  background-color: rgb(255, 255, 255);
+  background: url(../../../assets/9e2fc22f31bdd2186de63dc84e8eb968.png) center center / 100% 100% no-repeat;
+  overflow: hidden;
+}
+.group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 467px 3.13% 125px auto;
+  width: 988px;
+  max-width: 85%;
+  @include md {
+    margin: 150px 3.13% 125px auto;
+  }
+  @include xs {
+    margin: 80px 3.13% 80px auto;
+  }
+  @include tn {
+    margin: 50px 3.13% 50px auto;
+  }
+}
+.image6 {
+  position: absolute;
+  top: -467px;
+  left: -828px;
+  width: 1832px;
+  height: 101px;
+  object-fit: cover;
+}
+.image7 {
+  position: absolute;
+  top: -177px;
+  left: -680px;
+  width: 685px;
+  height: 531px;
+  object-fit: cover;
+}
+.flex_col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 385px 0px;
+  @include md {
+    gap: 150px 0px;
+  }
+  @include xs {
+    gap: 80px 0px;
+  }
+  @include tn {
+    gap: 50px 0px;
+  }
+}
+.hero_title1 {
+  font: 400 48px/1.22 "Montserrat", Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+  @include md {
+    align-items: flex-start;
+    font-size: 44px;
+  }
+  @include xxs {
+    font-size: 36px;
+  }
+}
+.highlight1 {
+  margin: 0px 0px 0px auto;
+  width: 632px;
+  max-width: 85%;
+  font: 400 18px/1.22 "Montserrat", Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+  @include md {
+    align-items: flex-start;
+    font-size: 16px;
+  }
+}
+.image8 {
+  position: absolute;
+  top: -124px;
+  left: -736px;
+  width: 418px;
+  height: 612px;
+  object-fit: cover;
+}

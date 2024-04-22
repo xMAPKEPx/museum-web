@@ -1,0 +1,26 @@
+@use "../../utils" as *;
+@use "../../global" as *;
+
+.section6 {
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+  background-color: rgb(193, 170, 139);
+}
+.highlight {
+  font: 400 16px/1.25 "Montserrat", Helvetica, Arial, serif;
+  color: rgba(0, 0, 0, 0.658);
+}
+.highlight_box {
+  margin: 40px auto 60px;
+}
+.highlight_span0 {
+  font: 1em/1.25 "Montserrat", Helvetica, Arial, serif;
+}
+.highlight_span1 {
+  font: italic 500 1em/1.25 "Montserrat", Helvetica, Arial, serif;
+  font-style: italic;
+}
+.highlight_span2 {
+  font: 1em/1.25 "Montserrat", Helvetica, Arial, serif;
+}
