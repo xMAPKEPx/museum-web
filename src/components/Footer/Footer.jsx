@@ -1,13 +1,13 @@
 import React from 'react';
 
-import styles from './Section6.module.scss';
+import styles from './Footer.module.scss';
 
-const Section6 = (props) => {
+const Footer = (props) => {
   return (
     <section className={styles.section6}>
         <p className={styles.highlight_box}>
             <span className={styles.highlight}>
-                <span className={styles.highlight_span0}>сделано командой “</span>
+                <span className={styles.highlight_span0}>Cделано командой “</span>
                 <span className={styles.highlight_span1}>Закодированные”</span>
                 <span className={styles.highlight_span2}> для Проектного Практикума </span>
             </span>
@@ -16,4 +16,4 @@ const Section6 = (props) => {
   );
 }
 
-export default Section6;
+export default Footer;
