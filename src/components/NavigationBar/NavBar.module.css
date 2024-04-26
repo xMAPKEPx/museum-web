@@ -1,0 +1,73 @@
+header {
+    background-color: transparent;
+    display: flex;
+    width: 1832px;
+    height: 110.5px;
+}
+
+.navbar {
+    color: rgba(0,0,0, 1);
+    display: flex;
+    font: 400 18px/1.22 "Montserrat", Helvetica, Arial, serif;
+}
+
+.home {
+    margin-right: 270px;
+    margin-left: 75px;
+}
+
+.navigation {
+    display: flex;
+    width: 1223px;
+}
+
+.navigation li {
+    margin: auto;
+    margin-right: 100px;
+    width: auto;
+    list-style-type: none;
+    white-space:  nowrap;
+}
+
+.navButtons, .navButtons:visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+.navButtons:hover {
+    color: white;
+}
+
+.loginBox {
+    margin: auto;
+    margin-left: 50px;
+    border: solid #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    gap: 10px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font: 400 16px/1.22 "Montserrat", Helvetica, Arial, serif;
+}
+
+.loginButton, .loginButton:visited {
+    margin: auto;
+    text-decoration: none;
+    color: #000000;
+}
+
+.loginBox:hover {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.line {
+    position: absolute;
+    width: 1832px;
+    height: 1px;
+    left: 44px;
+    top: 99.5px;
+    background: #000000;
+}

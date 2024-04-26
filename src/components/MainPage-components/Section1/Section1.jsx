@@ -1,15 +1,15 @@
 import React from "react";
 import styles from './Section1.module.scss'
-import navbar from '../../../assets/audio_equipment_advertisement.png';
 import boldMan from '../../../assets/bust_of_man_transparent_background.png';
 import beardedMan from '../../../assets/bust_of_bearded_man_transparent_background.png'
+import NavBar from "../../NavigationBar/NavBar";
 
 const Section1 = (props) => {
     return(
         <section className={styles.section1}>
             <div className={styles.box}>
+                <NavBar /> 
                 <div className={styles.group}>
-                    <img className={styles.image6} src={navbar} alt='Navigation bar' />
                     <img className={styles.image7} src={boldMan} alt='Bold man' />
 
                     <div className={styles.flex_col}>

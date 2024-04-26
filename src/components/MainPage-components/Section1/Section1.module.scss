@@ -7,12 +7,13 @@
 }
 .box {
   display: flex;
+  // border: 1px solid gray;
   flex-direction: column;
   margin: 0px auto;
   width: 100%;
   max-width: 1920px;
   background-color: rgb(255, 255, 255);
-  background: url(../../../assets/9e2fc22f31bdd2186de63dc84e8eb968.png) center center / 100% 100% no-repeat;
+  background: url(../../../assets/1st_background.png) center center / 100% 100% no-repeat;
   overflow: hidden;
 }
 .group {
@@ -32,14 +33,7 @@
     margin: 50px 3.13% 50px auto;
   }
 }
-.image6 {
-  position: absolute;
-  top: -467px;
-  left: -828px;
-  width: 1832px;
-  height: 101px;
-  object-fit: cover;
-}
+
 .image7 {
   position: absolute;
   top: -177px;

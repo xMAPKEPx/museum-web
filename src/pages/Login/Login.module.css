@@ -1,0 +1,29 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1920px;
+    background-color: rgb(232, 210, 182);
+    background: url(../../assets/1st_background.png) center center / 100% 100% no-repeat;
+    overflow: hidden;
+}
+
+.image7 {
+    position: absolute;
+    width: 685px;
+    height: 531px;
+    left: 192px;
+    top: 290px;
+    object-fit: cover;
+
+}
+
+  .image8 {
+    position: absolute;
+    width: 418px;
+    height: 612px;
+    left: 136px;
+    top: 343px;
+    object-fit: cover;
+}
