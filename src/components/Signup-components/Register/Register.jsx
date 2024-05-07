@@ -6,7 +6,7 @@ const Register = () => {
     return <>
         <div className={styles.form_container}>
             <form className={styles.form}>
-                <a href="/" className={styles.exit}><img src={exit} alt="user" width={16} height={16} /></a>
+                <a href="/" className={styles.exit}><img src={exit} alt="Exit icon" width={16} height={16} /></a>
                 <h1 className={styles.title}>Регистрация</h1>
                 <div  className={styles.inputLabel}>
                     <label htmlFor='surname'>Фамилия</label>
