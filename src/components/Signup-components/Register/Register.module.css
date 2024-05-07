@@ -1,0 +1,128 @@
+.form_container {
+    height: 1080px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    /* border: 1px solid black; */
+    background-color: white;
+    padding: 30px 70px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75); */
+    position: absolute;
+    width: 310px;
+    height: auto;
+    left: 1130px;
+    top: 315px;
+}
+
+.inputLabel {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font: 400 18px "Montserrat", Helvetica, Arial, serif;
+    color: rgba(0, 0, 0, 0.66);
+    letter-spacing: 1px;
+}
+
+.inputLabel .input {
+    margin-top: 5px;
+}
+
+.title {
+    font: 700 32px "Montserrat", Helvetica, Arial, serif;
+    color: rgba(0, 0, 0, 1);
+}
+
+.input {
+    width: 250px;
+    margin-top: 20px;
+    height: 20px;
+    border: 1px solid gray;
+    padding: 5px;
+    font-family: 'Inter', sans-serif;
+}
+
+.marketing {
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.marketing > input {
+    margin-right: 10px;
+}
+
+.submit {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #1c247a;
+    border: none;   
+    cursor: pointer; 
+}
+
+.messages {
+    display: flex;
+    justify-content: center;
+}
+
+.success {
+    display: block;
+    color: white;
+    width: fit-content;
+    height: 100px;
+    padding: 5px;
+}
+
+.error {
+    font-size: 12px;
+    color: red;
+    margin-top: 10px;
+    margin-left: -20px;
+    align-self: flex-start;
+}
+
+.register {
+    margin-top: 60px;
+    background: rgba(232, 210, 182, 0.74);
+    border-radius: 10px;
+    border: none;
+    width: 220px;
+    height: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.register:hover {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.exit {
+    top: 3px;
+    left: 415px;
+    position: absolute;
+    border-radius: 8px;
+    padding: 0%;
+    background-color: #fdf4e3;
+    border: none;
+    cursor: pointer;
+}
+
+.exit img {
+    margin: 7px;
+}
