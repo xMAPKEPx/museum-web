@@ -1,13 +1,15 @@
 import React from "react";
 import styles from './LoginForm.module.css'
+import exit from '../../../assets/exit.png'
 
 const LoginForm = () => {
     return <>
         <div className={styles.form_container}>
             <form className={styles.form}>
+                <a href="/" className={styles.exit}><img src={exit} alt="user" width={16} height={16} /></a>
                 <h1 className={styles.title}>Вход</h1>
                 <div  className={styles.inputLabel}>
-                    <label for='email'>E-mail</label>
+                    <label htmlFor='email'>E-mail</label>
                     <input
                         type="email"
                         name="email"
@@ -16,7 +18,7 @@ const LoginForm = () => {
                     />
                 </div>
                 <div  className={styles.inputLabel}>
-                    <label for='password'>Пароль</label>
+                    <label htmlFor='password'>Пароль</label>
                     <input
                         type="password"
                         name="password"
@@ -24,7 +26,8 @@ const LoginForm = () => {
                         className={styles.input}
                     />
                 </div>
-
+                <button className={styles.login} type="submit">Войти</button>
+                <a  href="/signup" className={styles.signup}>Регистрация</a>
             </form>
         </div>
     </>

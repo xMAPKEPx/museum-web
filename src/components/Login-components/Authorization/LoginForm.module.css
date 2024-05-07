@@ -18,7 +18,7 @@
     /* box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75); */
     position: absolute;
     width: 310px;
-    height: 350px;
+    height: auto;
     left: 1130px;
     top: 315px;
 }
@@ -91,4 +91,54 @@
     margin-top: 10px;
     margin-left: -20px;
     align-self: flex-start;
+}
+
+.signup {
+    color: rgba(0, 0, 0, .54);
+    margin-top: 4px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.signup:hover {
+    color: black;
+}
+
+.login {
+    margin-top: 60px;
+    background: rgba(232, 210, 182, 0.74);
+    border-radius: 10px;
+    border: none;
+    width: 150px;
+    height: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.login:hover {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.exit {
+    top: 3px;
+    left: 415px;
+    position: absolute;
+    border-radius: 8px;
+    padding: 0%;
+    background-color: #fdf4e3;
+    border: none;
+    cursor: pointer;
+}
+
+.exit img {
+    margin: 7px;
 }
