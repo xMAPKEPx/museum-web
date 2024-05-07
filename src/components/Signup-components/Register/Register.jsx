@@ -14,7 +14,8 @@ const Register = () => {
                         type="text"
                         name="surname"
                         id="surname"
-                        className={styles.input} 
+                        className={styles.input}
+                        required 
                     />
                 </div>
                 <div  className={styles.inputLabel}>
@@ -24,6 +25,7 @@ const Register = () => {
                         name="name"
                         id="name"
                         className={styles.input} 
+                        required
                     />
                 </div>
                 <div  className={styles.inputLabel}>
@@ -33,6 +35,7 @@ const Register = () => {
                         name="email"
                         id="email"
                         className={styles.input} 
+                        required
                     />
                 </div>
                 <div  className={styles.inputLabel}>
@@ -42,6 +45,7 @@ const Register = () => {
                         name="password"
                         id="password"
                         className={styles.input}
+                        required
                     />
                 </div>
                 <div  className={styles.inputLabel}>
@@ -51,6 +55,7 @@ const Register = () => {
                         name="check-password"
                         id="check-password"
                         className={styles.input}
+                        required
                     />
                 </div>
                 <button className={styles.register} type="submit">Зарегистрироваться</button>

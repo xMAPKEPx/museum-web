@@ -1,9 +1,169 @@
 @use "../../utils" as *;
 @use "../../global" as *;
 
-.section2 {
+.root {
+  position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 1080px;
-  background: url(../../../assets/2nd_page.png) center center / 100% 100% no-repeat;
+  background: url(../../../assets/2nd_background.png) center center / 100% 100% no-repeat;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+.flex_row {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 0px 10px;
+  margin: 94px auto 153px;
+  width: 1445.9375px;
+  max-width: 85%;
+  padding: 0px 13px 0px 0px;
+  @include xl {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px 10px;
+  }
+  @include md {
+    margin: 94px auto 150px;
+  }
+  @include xs {
+    margin: 80px auto;
+  }
+  @include tn {
+    margin: 50px auto;
+    padding: 0px 8px 0px 0px;
+  }
+}
+.flex_col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 188px;
+  width: 744px;
+  min-width: 0px;
+  @include xl {
+    margin-top: unset;
+    margin-bottom: unset;
+    width: 100%;
+    min-width: unset;
+  }
+}
+.hero_title {
+  position: relative;
+  font: 700 48px/1.22 "Montserrat", Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+  @include md {
+    align-items: flex-start;
+    font-size: 44px;
+  }
+  @include xxs {
+    font-size: 36px;
+  }
+}
+// .hero_title_box {
+//   position: relative;
+//   @include md {
+//     align-items: flex-start;
+//   }
+// }
+// .hero_title_span0 {
+//   font: 700 1em/1.22 "Montserrat", Helvetica, Arial, serif;
+// }
+// .hero_title_span1 {
+//   font: 1em/1.22 "Montserrat", Helvetica, Arial, serif;
+// }
+.big_title {
+  position: relative;
+  margin: 25px 0px 0px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  @include md {
+    align-items: flex-start;
+    font-size: 32px;
+  }
+  @include xxs {
+    font-size: 28px;
+  }
+}
+.big_title1 {
+  position: relative;
+  margin: 192px 0px 0px;
+  font: 400 34px/1.2 "Montserrat", Helvetica, Arial, serif;
+  font-style: italic;
+  color: rgb(0, 0, 0);
+  @include md {
+    align-items: flex-start;
+    margin: 150px 0px 0px;
+    font-size: 32px;
+  }
+  @include xs {
+    margin: 80px 0px 0px;
+  }
+  @include xxs {
+    font-size: 28px;
+  }
+  @include tn {
+    margin: 50px 0px 0px;
+  }
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  align-content: start;
+  row-gap: 45px;
+  column-gap: 43px;
+  margin: 84px 0px 0px;
+  width: 643px;
+  min-width: 0px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @include xl {
+    margin-top: unset;
+    margin-bottom: unset;
+    width: 100%;
+    min-width: unset;
+  }
+  @include md {
+    column-gap: 32px;
+  }
+  @include xs {
+    column-gap: 16px;
+  }
+  @include tn {
+    column-gap: 8px;
+  }
+}
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px 0px;
+  grid-row: span 1;
+  grid-column: span 1;
+}
+.image1 {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+}
+.highlight {
+  position: relative;
+  font: 700 18px/1.22 "Montserrat", Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+  @include md {
+    align-items: flex-start;
+    font-size: 16px;
+  }
+}
+.item1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 31px 0px;
+  grid-row: span 1;
+  grid-column: span 1;
 }

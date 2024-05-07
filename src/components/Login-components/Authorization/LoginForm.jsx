@@ -15,6 +15,7 @@ const LoginForm = () => {
                         name="email"
                         id="email"
                         className={styles.input} 
+                        required
                     />
                 </div>
                 <div  className={styles.inputLabel}>
@@ -24,6 +25,7 @@ const LoginForm = () => {
                         name="password"
                         id="password"
                         className={styles.input}
+                        required
                     />
                 </div>
                 <button className={styles.login} type="submit">Войти</button>
