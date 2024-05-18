@@ -8,8 +8,8 @@ const NavBar = () => {
             <nav className={styles.navbar}>
                 <a className={styles.home} href="/"><img src={logo} width="100" height="100" alt='Home' /> </a>
                 <ul className={styles.navigation}>
-                    <li><a className={styles.navButtons} href="/">КАТАЛОГ ВЫСТАВОК</a></li>
-                    <li><a className={styles.navButtons} href="/">ХРАНИЛИЩЕ КОЛЛЕКЦИЙ</a></li>
+                    <li><a className={styles.navButtons} href="/exhibitions">КАТАЛОГ ВЫСТАВОК</a></li>
+                    <li><a className={styles.navButtons} href="/archives">ХРАНИЛИЩЕ КОЛЛЕКЦИЙ</a></li>
                     <li><a className={styles.navButtons} href="/">КОНСТРУКТОР ВЫСТАВОК</a></li>
                     <li><a className={styles.navButtons} href="/">СОЦИАЛЬНЫЕ СЕТИ</a></li>
                 </ul>

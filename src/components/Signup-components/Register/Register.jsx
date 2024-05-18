@@ -22,21 +22,25 @@ const Register = () => {
         }))
     }
 
-    const handleSubmit = (evt) => {
+    const handleSubmit = async(evt) => {
         evt.preventDefault()
-        if (data.password === data.confirmPassword) {
-            axios.post('/', {
-                surname: data.surname,
-                name: data.name,
-                email: data.email,
-                password: data.password,
-                confirmPassword: data.confirmPassword,
-            })
-            setSubmitted(true)
-            setError(false)
-        } else {
-            setError(true)
-            setSubmitted(false)
+        try{
+            if (data.password === data.confirmPassword) {
+                const response = await axios.post('https://jsonplaceholder.typicode.com/posts', {
+                    surname: data.surname,
+                    name: data.name,
+                    email: data.email,
+                    password: data.password,
+                })
+                setSubmitted(true)
+                setError(false)
+                window.location.href = '/login'
+            } else {
+                setError(true)
+                setSubmitted(false)
+            }
+        } catch (e){
+            console.log("Error: " + e)
         }
     }
 
