@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import styles from './Register.module.css'
 import exit from '../../../assets/exit.png'
-import axios from "axios";
+import { signup } from "../../../api.auth";
+import { useDispatch } from "react-redux";
+import { setAuth } from "../../../redux/AuthSlice/AuthSlice";
 
 const Register = () => {
     const [data, setData] = useState({
-        surname: '',
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
+        surname: 'Holt',
+        name: 'Eve',
+        email: 'eve.holt@reqres.in',
+        password: 'pistol',
+        confirmPassword: 'pistol',
     })
     const [error, setError] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const dispatch = useDispatch()
 
     const handleChange = (evt) => {
-        const {name, value, type, checked} = evt.target
+        const {name, value} = evt.target
         setData(prevFormData => ({
             ...prevFormData,
             [name]: value
@@ -26,21 +29,20 @@ const Register = () => {
         evt.preventDefault()
         try{
             if (data.password === data.confirmPassword) {
-                const response = await axios.post('https://jsonplaceholder.typicode.com/posts', {
-                    surname: data.surname,
-                    name: data.name,
-                    email: data.email,
-                    password: data.password,
-                })
+                const response = await signup(data.surname, data.name, data.email, data.password)
                 setSubmitted(true)
                 setError(false)
-                window.location.href = '/login'
+                localStorage.setItem('token', response.data.token)
+                dispatch(setAuth(localStorage.getItem('token')!==null))
             } else {
                 setError(true)
                 setSubmitted(false)
             }
         } catch (e){
             console.log("Error: " + e)
+        } finally {
+            setSubmitted(false)
+            window.location.href = '/login'
         }
     }
 

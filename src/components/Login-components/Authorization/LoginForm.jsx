@@ -1,28 +1,32 @@
 import React, { useState } from "react";
 import styles from './LoginForm.module.css'
 import exit from '../../../assets/exit.png'
-import axios from "axios";
+import { login } from "../../../api.auth";
+import { useDispatch, useSelector } from "react-redux";
+import { setAuth } from "../../../redux/AuthSlice/AuthSlice";
 
 const LoginForm = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('eve.holt@reqres.in')
+    const [password, setPassword] = useState('cityslicka')
     const [isLogin, setIsLogin] = useState(false)
     const [isError, setIsError] = useState(false)
+    const dispatch = useDispatch()
 
     const handleSubmit = async(evt) => {
         evt.preventDefault()
         try {
-            const response = await axios.post('https://jsonplaceholder.typicode.com/posts', {
-            email: email,
-            password: password,
-            })
+            const response = await login(email, password)
             setIsLogin(true)
             setIsError(false)
-            window.location.href = '/'
+            localStorage.setItem('token', response.data.token)
+            dispatch(setAuth(localStorage.getItem('token')!==null))
         } catch (e) {
             setIsError(true)
             setIsLogin(false)
             console.log('Error: ' + e)
+        } finally {
+            setIsLogin(false)
+            window.location.href = '/'
         }
 
     }

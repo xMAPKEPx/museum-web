@@ -1,20 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const AuthSlice = createSlice({
-  name: 'chart',
+const authSlice = createSlice({
+  name: 'auth',
   initialState: {
-    isAuth: false,
-    isAuthInProgress: false,
+    isAuth: localStorage.getItem('token')!==null,
   },
   reducers: {
     setAuth(state, action) {
-      state.isAuth=action.payload;
+      state.isAuth = action.payload;
     },
-    setAuthInProgress(state, action) {
-      state.isAuthInProgress=action.payload;
-    }
   },
 })
 
-export const { setAuth, setAuthInProgress } = AuthSlice.actions
-export default AuthSlice.reducer
+export const { setAuth } = authSlice.actions
+export default authSlice.reducer

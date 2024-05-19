@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import chartReducer from './AuthSlice/AuthSlice'
+import authReducer from './AuthSlice/AuthSlice'
 
 export const store = configureStore({
   reducer: {
-    chart: chartReducer,
+    auth: authReducer,
   },
 })

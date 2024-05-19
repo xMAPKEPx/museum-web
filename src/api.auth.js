@@ -1,16 +1,17 @@
 import { instance } from "./api.config.js";
 
-export const AuthService = () => {
+export const signup = (surname, name, email, password) => {
+    return instance.post("https://reqres.in/api/register", { surname, name, email, password });
+}
 
-    const login = (email, password) => {
-        return instance.post("/api/login", {email, password})
-    }
-    
-    const refreshToken = () => {
-        return instance.get("/api/refresh");
-    }
-    
-    const logout = () => {
-        return instance.post("/api/logout")
-    }
+export const login = (email, password) => {
+    return instance.post("https://reqres.in/api/login", {email, password})
+}
+
+export const refreshToken = () => {
+    return instance.get("/api/refresh");
+}
+
+export const logout = () => {
+    return instance.post("/api/logout")
 }

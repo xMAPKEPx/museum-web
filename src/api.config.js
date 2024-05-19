@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const instance = axios.create({
-  withCredentials: true,
-  baseURL: "https://jsonplaceholder.typicode.com/",
+  // withCredentials: true,
+  // baseURL: "https://reqres.in/api/",
 });
 
 
@@ -28,8 +28,9 @@ instance.interceptors.response.use(
       !error.config._isRetry
     ) {
       try {
-        const resp = await instance.get("/api/refresh");
-        localStorage.setItem("token", resp.data.accessToken);
+        const resp = await instance.get("https://reqres.in/api/login");
+        localStorage.setItem("token", resp.data.token);
+        console.log(localStorage.getItem('token'))
         return instance.request(originalRequest);
       } catch (error) {
         console.log("AUTH ERROR");

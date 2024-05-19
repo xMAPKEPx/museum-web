@@ -1,4 +1,4 @@
-import styles from './Exhibitions.module.scss';
+import styles from './Profile.module.scss';
 import PropTypes from 'prop-types';
 import Section1 from '../../components/MainPage-components/Section1/Section1.jsx'
 import Section2 from '../../components/MainPage-components/Section2/Section2.jsx'
@@ -7,7 +7,7 @@ import Section4 from '../../components/MainPage-components/Section4/Section4.jsx
 import Section5 from '../../components/MainPage-components/Section5/Section5.jsx'
 import Footer from '../../components/Footer/Footer.jsx'
 
-function Exhibitions(props) {
+function Profile(props) {
   const handleClick = (e) => {
     e.preventDefault();
     localStorage.removeItem('token');
@@ -26,8 +26,8 @@ function Exhibitions(props) {
   </>
 }
 
-Exhibitions.propTypes = {
+Profile.propTypes = {
   className: PropTypes.string
 };
 
-export default Exhibitions;
+export default Profile;

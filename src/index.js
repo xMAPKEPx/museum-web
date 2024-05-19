@@ -4,7 +4,6 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-  Routes,
   Route
 } from "react-router-dom";
 import './index.css';
@@ -16,6 +15,7 @@ import FamilyArchives from "./pages/Family-Archives/Family-Archives";
 import Exhibitions from "./pages/Museum-Exhibitions/Exhibitions";
 import { Provider } from "react-redux";
 import { store } from './redux/store'
+import Profile from "./pages/Profile/Profile";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,17 +29,18 @@ const router = createBrowserRouter(
       </Route>
       <Route path='/login' element={<Auth />}></Route>
       <Route path='/signup' element={<Signup />}></Route>
-      <Route path='/social' element = {<PrivateRoute />}>
-        <Route path="/social/id1" element = {<Auth />} />
+      <Route path='' element = {<PrivateRoute />}>
+        <Route path="/profile" element = {<Profile />} />
       </Route>
     </Route>
   )
 );
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
     </Provider>
-  </React.StrictMode>
 );
