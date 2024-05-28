@@ -15,7 +15,7 @@ import FamilyArchives from "./pages/Family-Archives/Family-Archives";
 import Exhibitions from "./pages/Museum-Exhibitions/Exhibitions";
 import { Provider } from "react-redux";
 import { store } from './redux/store'
-import Profile from "./pages/Profile/Profile";
+import ProfilePage from "./pages/Profile/Profile";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +30,7 @@ const router = createBrowserRouter(
       <Route path='/login' element={<Auth />}></Route>
       <Route path='/signup' element={<Signup />}></Route>
       <Route path='' element = {<PrivateRoute />}>
-        <Route path="/profile" element = {<Profile />} />
+        <Route path="/profile" element = {<ProfilePage />} />
       </Route>
     </Route>
   )
@@ -39,8 +39,6 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
     <Provider store={store}>
-      <React.StrictMode>
         <RouterProvider router={router} />
-      </React.StrictMode>
     </Provider>
 );

@@ -2,20 +2,17 @@ import React, { useState } from "react";
 import styles from './Register.module.css'
 import exit from '../../../assets/exit.png'
 import { signup } from "../../../api.auth";
-import { useDispatch } from "react-redux";
-import { setAuth } from "../../../redux/AuthSlice/AuthSlice";
 
 const Register = () => {
     const [data, setData] = useState({
-        surname: 'Holt',
-        name: 'Eve',
+        last_name: 'Holt',
+        first_name: 'Eve',
         email: 'eve.holt@reqres.in',
-        password: 'pistol',
-        confirmPassword: 'pistol',
+        password: 'qwerty123!',
+        re_password: 'qwerty123!',
     })
     const [error, setError] = useState(false);
     const [submitted, setSubmitted] = useState(false);
-    const dispatch = useDispatch()
 
     const handleChange = (evt) => {
         const {name, value} = evt.target
@@ -28,12 +25,11 @@ const Register = () => {
     const handleSubmit = async(evt) => {
         evt.preventDefault()
         try{
-            if (data.password === data.confirmPassword) {
-                const response = await signup(data.surname, data.name, data.email, data.password, data.confirmPassword)
+            if (data.password === data.re_password) {
+                await signup(data.last_name, data.first_name, data.email, data.password, data.re_password)
                 setSubmitted(true)
                 setError(false)
-                localStorage.setItem('token', response.data.token)
-                dispatch(setAuth(localStorage.getItem('token')!==null))
+                window.location.href = '/login'
             } else {
                 setError(true)
                 setSubmitted(false)
@@ -42,38 +38,37 @@ const Register = () => {
             console.log("Error: " + e)
         } finally {
             setSubmitted(false)
-            window.location.href = '/login'
         }
     }
 
     return <>
         <div className={styles.form_container}>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <a href="/" className={styles.exit}><img src={exit} alt="Exit icon" width={16} height={16} /></a>
+                <a href="/login" className={styles.exit}><img src={exit} alt="Exit icon" width={16} height={16} /></a>
                 <h1 className={styles.title}>Регистрация</h1>
                 <div  className={styles.inputLabel}>
-                    <label htmlFor='surname'>Фамилия</label>
+                    <label htmlFor='last_name'>Фамилия</label>
                     <input
                         type="text"
-                        name="surname"
-                        id="surname"
+                        name="last_name"
+                        id="last_name"
                         className={styles.input}
                         required 
                         onChange={handleChange}
-                        value={data.surname}
+                        value={data.last_name}
                     />
 
                 </div>
                 <div  className={styles.inputLabel}>
-                    <label htmlFor='name'>Имя</label>
+                    <label htmlFor='first_name'>Имя</label>
                     <input
                         type="text"
-                        name="name"
-                        id="name"
+                        name="first_name"
+                        id="first_name"
                         className={styles.input} 
                         required
                         onChange={handleChange}
-                        value={data.name}
+                        value={data.first_name}
                     />
                 </div>
                 <div  className={styles.inputLabel}>
@@ -101,15 +96,15 @@ const Register = () => {
                     />
                 </div>
                 <div  className={styles.inputLabel}>
-                    <label htmlFor='confirmPassword'>Повторите пароль</label>
+                    <label htmlFor='re_password'>Повторите пароль</label>
                     <input
                         type="password"
-                        name="confirmPassword"
-                        id="confirmPassword"
+                        name="re_password"
+                        id="re_password"
                         className={styles.input}
                         required
                         onChange={handleChange}
-                        value={data.confirmPassword}
+                        value={data.re_password}
                     />
                     {error && <span className={styles.error}>Пароли отличаются!</span>}
                 </div>

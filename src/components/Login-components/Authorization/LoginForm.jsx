@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import styles from './LoginForm.module.css'
 import exit from '../../../assets/exit.png'
 import { login } from "../../../api.auth";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { setAuth } from "../../../redux/AuthSlice/AuthSlice";
 
 const LoginForm = () => {
     const [email, setEmail] = useState('eve.holt@reqres.in')
-    const [password, setPassword] = useState('cityslicka')
+    const [password, setPassword] = useState('qwerty123!')
     const [isLogin, setIsLogin] = useState(false)
     const [isError, setIsError] = useState(false)
     const dispatch = useDispatch()
@@ -18,8 +18,9 @@ const LoginForm = () => {
             const response = await login(email, password)
             setIsLogin(true)
             setIsError(false)
-            localStorage.setItem('token', response.data.token)
-            dispatch(setAuth(localStorage.getItem('token')!==null))
+            localStorage.setItem('access-token', response.data.access)
+            localStorage.setItem('refresh-token', response.data.refresh)
+            dispatch(setAuth(localStorage.getItem('access-token')!==null))
             window.location.href = '/'
         } catch (e) {
             setIsError(true)
