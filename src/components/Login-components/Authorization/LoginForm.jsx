@@ -20,13 +20,13 @@ const LoginForm = () => {
             setIsError(false)
             localStorage.setItem('token', response.data.token)
             dispatch(setAuth(localStorage.getItem('token')!==null))
+            window.location.href = '/'
         } catch (e) {
             setIsError(true)
             setIsLogin(false)
             console.log('Error: ' + e)
         } finally {
             setIsLogin(false)
-            window.location.href = '/'
         }
 
     }

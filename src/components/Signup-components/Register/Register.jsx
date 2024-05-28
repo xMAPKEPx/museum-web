@@ -29,7 +29,7 @@ const Register = () => {
         evt.preventDefault()
         try{
             if (data.password === data.confirmPassword) {
-                const response = await signup(data.surname, data.name, data.email, data.password)
+                const response = await signup(data.surname, data.name, data.email, data.password, data.confirmPassword)
                 setSubmitted(true)
                 setError(false)
                 localStorage.setItem('token', response.data.token)

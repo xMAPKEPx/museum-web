@@ -5,7 +5,7 @@ export const signup = (surname, name, email, password) => {
 }
 
 export const login = (email, password) => {
-    return instance.post("https://reqres.in/api/login", {email, password})
+    return instance.post("http://127.0.0.1:8000/auth/signin/", {email, password})
 }
 
 export const refreshToken = () => {
@@ -13,5 +13,5 @@ export const refreshToken = () => {
 }
 
 export const logout = () => {
-    return instance.post("/api/logout")
+    localStorage.removeItem('token')
 }
