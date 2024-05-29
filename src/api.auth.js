@@ -2,7 +2,7 @@ import axios from "axios";
 import { instance } from "./api.config.js";
 
 export const signup = (last_name, first_name, email, password, re_password) => {
-    return axios.post("http://127.0.0.1:8000/auth/signup/", { 
+    return axios.post("/auth/signup/", { 
         first_name: first_name,
         last_name: last_name,
         email: email,
@@ -33,6 +33,6 @@ export const getMyInfo = () => {
     return instance.get(`/users/me/`)
 }
 
-export const changeMyPhoto = (id, photo) => {
-    return instance.post(`users/${id}/upload_avatar`, photo)
+export const changeMyPhoto = (photo) => {
+    return instance.post(`/users/upload_avatar/`, photo)
 }

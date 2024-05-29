@@ -37,8 +37,10 @@ function Profile(props) {
 
     const handleImgChange = async(evt) => {
         evt.preventDefault()
+        const formData = new FormData();
+        formData.append('img', photo)
         try {
-            const response = await changeMyPhoto(user.id, photo)
+            const response = await changeMyPhoto(formData)
             console.log(response)
         } catch (e) {
             console.log('Error: ', e)
@@ -135,7 +137,7 @@ function Profile(props) {
                                 />: 
                                 <img
                                 className={styles.profileImage}
-                                src={image}
+                                src={user.image_url ? user.image_url : image}
                                 alt="alt text"
                                 />}
                                 <button onClick={() => setPhoto(null)}>Очистить</button>
