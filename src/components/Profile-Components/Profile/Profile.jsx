@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./Profile.module.scss";
 import image from '../../../assets/profileImg.svg'
 import eye from '../../../assets/showPassword.png'
 import NavBar from "../../NavigationBar/NavBar";
-import { changeMyPhoto, getMyInfo } from "../../../api.auth";
-import { useDispatch, useSelector } from "react-redux";
+import {changeMyPhoto, getMyInfo} from "../../../api.auth";
+import {useDispatch, useSelector} from "react-redux";
 import {setChange} from '../../../redux/UserSlice/UserSlice'
 
-function Profile(props) {
+function Profile() {
     const dispatch = useDispatch()
     const isChanging = useSelector(state => state.user.isChanging)
     const [user, setUser] = useState({})
     const [photo, setPhoto] = useState(null)
+    const [isShown, setIsShown] = useState(false)
 
     useEffect(()=>{
         const fetchData = async() =>{
@@ -45,6 +46,10 @@ function Profile(props) {
         } catch (e) {
             console.log('Error: ', e)
         }
+    }
+
+    function showPassword() {
+        setIsShown(!isShown)
     }
 
     return <>
@@ -98,15 +103,15 @@ function Profile(props) {
                                 <label htmlFor='password' className={styles.inputLabel}>Пароль</label>
             
                                 <div className={styles.profilePasswordFlexRow}>
-                                    <input 
-                                    type='password'
+                                    <input
+                                        type={isShown ? 'text' : 'password'}
                                     name="password"
                                     id="password" 
                                     className={styles.input} 
                                     disabled={!isChanging} 
                                     onChange={handleChange} 
                                     value={user.password}/>
-                                    <img
+                                    <img onClick={showPassword}
                                         className={styles.profilePasswordImage}
                                         src={eye}
                                         alt="alt text"

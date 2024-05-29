@@ -1,12 +1,15 @@
 header {
-    background-color: transparent;
+    background-color: rgb(193, 167, 127);
     display: flex;
-    width: 1832px;
+    width: 100%;
     height: 110.5px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
 }
 
 .navbar {
-    color: rgba(0,0,0, 1);
+    color: rgba(0, 0, 0, 1);
     display: flex;
     font: 400 18px/1.22 "Montserrat", Helvetica, Arial, serif;
 }
@@ -26,7 +29,7 @@ header {
     margin-right: 100px;
     width: auto;
     list-style-type: none;
-    white-space:  nowrap;
+    white-space: nowrap;
 }
 
 .navButtons, .navButtons:visited {
@@ -39,8 +42,7 @@ header {
 }
 
 .loginBox {
-    margin: auto;
-    margin-left: 50px;
+    margin: auto auto auto 50px;
     border: solid #ccc;
     display: flex;
     flex-direction: row;
@@ -73,5 +75,5 @@ header {
 }
 
 .profile {
-    margin:auto;
+    margin: auto;
 }
