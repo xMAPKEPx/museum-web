@@ -1,8 +1,8 @@
 import axios from "axios";
-import { instance } from "./api.config.js";
+import {instance} from "./api.config.js";
 
 export const signup = (last_name, first_name, email, password, re_password) => {
-    return axios.post("/auth/signup/", { 
+    return axios.post("/auth/signup/", {
         first_name: first_name,
         last_name: last_name,
         email: email,

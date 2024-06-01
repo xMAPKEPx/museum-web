@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import styles from './Register.module.css'
 import exit from '../../../assets/exit.png'
-import { signup } from "../../../api.auth";
+import {signup} from "../../../api.auth";
+import {useNavigate} from "react-router-dom";
 
 const Register = () => {
     const [data, setData] = useState({
@@ -13,6 +14,7 @@ const Register = () => {
     })
     const [error, setError] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const navigate = useNavigate()
 
     const handleChange = (evt) => {
         const {name, value} = evt.target
@@ -29,7 +31,7 @@ const Register = () => {
                 await signup(data.last_name, data.first_name, data.email, data.password, data.re_password)
                 setSubmitted(true)
                 setError(false)
-                window.location.href = '/login'
+                navigate('/login')
             } else {
                 setError(true)
                 setSubmitted(false)

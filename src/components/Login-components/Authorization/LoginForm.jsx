@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import styles from './LoginForm.module.css'
 import exit from '../../../assets/exit.png'
-import { login } from "../../../api.auth";
-import { useDispatch} from "react-redux";
-import { setAuth } from "../../../redux/AuthSlice/AuthSlice";
+import {login} from "../../../api.auth";
+import {useDispatch} from "react-redux";
+import {setAuth} from "../../../redux/AuthSlice/AuthSlice";
+import {useNavigate} from "react-router-dom";
 
 const LoginForm = () => {
     const [email, setEmail] = useState('eve.holt@reqres.in')
@@ -11,6 +12,7 @@ const LoginForm = () => {
     const [isLogin, setIsLogin] = useState(false)
     const [isError, setIsError] = useState(false)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleSubmit = async(evt) => {
         evt.preventDefault()
@@ -21,7 +23,7 @@ const LoginForm = () => {
             localStorage.setItem('access-token', response.data.access)
             localStorage.setItem('refresh-token', response.data.refresh)
             dispatch(setAuth(localStorage.getItem('access-token')!==null))
-            window.location.href = '/'
+            navigate('/')
         } catch (e) {
             setIsError(true)
             setIsLogin(false)

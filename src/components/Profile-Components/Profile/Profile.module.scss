@@ -56,7 +56,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 95px 0;
+    gap: 20px 0;
     margin: 60px auto 24px;
     width: 974.046875px;
     max-width: 85%;
@@ -181,6 +181,19 @@
     padding: 4px 8px 4px 8px;
 }
 
+.selectButton {
+    border: 2px solid #505050;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font: 300 18px/1.22 "Montserrat", Helvetica, Arial, serif;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    background-color: rgba(232, 211, 182, 0.737);
+    border-radius: 8px 8px 8px 8px;
+    padding: 4px 8px 4px 8px;
+}
+
 .profileEditButton {
     position: relative;
     display: flex;
@@ -194,4 +207,8 @@
     background-color: rgba(232, 211, 182, 0.737);
     border-radius: 8px 8px 8px 8px;
     padding: 6.5px 30px 6.5px 30px;
+}
+
+.hidden {
+    display: none;
 }

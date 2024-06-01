@@ -1,5 +1,4 @@
 import styles from './MainPage.module.scss';
-import PropTypes from 'prop-types';
 import Section1 from '../../components/MainPage-components/Section1/Section1.jsx'
 import Section2 from '../../components/MainPage-components/Section2/Section2.jsx'
 import Section3 from '../../components/MainPage-components/Section3/Section3.jsx'
@@ -8,8 +7,7 @@ import Section5 from '../../components/MainPage-components/Section5/Section5.jsx
 import Footer from '../../components/Footer/Footer.jsx'
 
 function MainPage(props) {
-  return <>
-    <div className={styles.main}>
+    return <div className={styles.main}>
       <Section1 />
       <Section2 />
       <Section3 />
@@ -17,11 +15,6 @@ function MainPage(props) {
       <Section5 />
       <Footer />
     </div>
-  </>
 }
-
-MainPage.propTypes = {
-  className: PropTypes.string
-};
 
 export default MainPage;
