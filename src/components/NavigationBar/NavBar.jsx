@@ -1,12 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from './NavBar.module.css';
 import logo from '../../assets/logo.png'
 import miniProfile from '../../assets/mini-profile.png'
 import {useSelector} from "react-redux";
+import {getMyInfo} from "../../api.auth";
+import {setImage} from "../../redux/UserSlice/UserSlice";
 
 const NavBar = () => {
-    const isAuth = useSelector(state => state.auth.isAuth)
-    const userImage = useSelector(state => state.user.image)
+    const isAuth = useSelector(state => state.auth.isAuth);
+    const userImage = useSelector(state => state.user.image);
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await getMyInfo();
+            dispatch(setImage(response.data.image_url))
+        }
+        fetchData()
+    }, [isAuth]);
     return  (
         <header>
             <nav className={styles.navbar}>
