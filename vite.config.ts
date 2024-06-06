@@ -12,4 +12,8 @@ export default defineConfig({
             include: '**/*.svg?react',
         }),
     ],
+    preview: {
+        host: true,
+        port: 5173,
+    }
 });
