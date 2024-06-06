@@ -14,7 +14,7 @@ function Profile() {
     const isChanging = useSelector(state => state.user.isChanging)
     const [user, setUser] = useState({
         id: NaN,
-        email: "mail@mail.ru",
+        email: "",
         first_name: "",
         last_name: "",
         image_url: "",
