@@ -8,4 +8,4 @@ services:
     #    volumes:
     #      - .:/app:delegated
     #      - /app/node_modules
-    command: tail -f /dev/null
+    command: npm run serve
