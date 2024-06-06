@@ -7,8 +7,8 @@ import {setAuth} from "../../../redux/AuthSlice/AuthSlice";
 import {useNavigate} from "react-router-dom";
 
 const LoginForm = () => {
-    const [email, setEmail] = useState('eve.holt@reqres.in')
-    const [password, setPassword] = useState('qwerty123!')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const [isLogin, setIsLogin] = useState(false)
     const [isError, setIsError] = useState(false)
     const dispatch = useDispatch()

@@ -6,11 +6,11 @@ import {useNavigate} from "react-router-dom";
 
 const Register = () => {
     const [data, setData] = useState({
-        last_name: 'Holt',
-        first_name: 'Eve',
-        email: 'eve.holt@reqres.in',
-        password: 'qwerty123!',
-        re_password: 'qwerty123!',
+        last_name: '',
+        first_name: '',
+        email: '',
+        password: '',
+        re_password: '',
     })
     const [error, setError] = useState(false);
     const [submitted, setSubmitted] = useState(false);
