@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import styles from './NavBar.module.css';
-import logo from '../../assets/logo.png'
+import logo from '../../assets/file.png'
 import miniProfile from '../../assets/mini-profile.png'
 import {useDispatch, useSelector} from "react-redux";
 import {getMyInfo} from "../../api.auth";
@@ -20,7 +20,7 @@ const NavBar = () => {
     return  (
         <header>
             <nav className={styles.navbar}>
-                <a className={styles.home} href="/"><img src={logo} width="100" alt='Home' /> </a>
+                <a className={styles.home} href="/"><img src={logo} width="240" alt='Home'/> </a>
                 <ul className={styles.navigation}>
                     <li><a className={styles.navButtons} href="/exhibitions">КАТАЛОГ ВЫСТАВОК</a></li>
                     <li><a className={styles.navButtons} href="/archives">ХРАНИЛИЩЕ КОЛЛЕКЦИЙ</a></li>
