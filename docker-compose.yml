@@ -8,5 +8,4 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-    command:
-      - npm run serve
+    command: npm run serve
