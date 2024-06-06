@@ -2,11 +2,12 @@ import React, {useEffect} from "react";
 import styles from './NavBar.module.css';
 import logo from '../../assets/logo.png'
 import miniProfile from '../../assets/mini-profile.png'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getMyInfo} from "../../api.auth";
 import {setImage} from "../../redux/UserSlice/UserSlice";
 
 const NavBar = () => {
+    const dispatch = useDispatch()
     const isAuth = useSelector(state => state.auth.isAuth);
     const userImage = useSelector(state => state.user.image);
     useEffect(() => {
