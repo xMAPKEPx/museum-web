@@ -36,3 +36,12 @@ export const getMyInfo = () => {
 export const changeMyPhoto = (photo) => {
     return instance.post(`/users/upload_avatar/`, photo)
 }
+
+export const changeProfileInfo = (id, last_name, first_name, image_url, phone) => {
+    return instance.post(`/users/${id}/edit`, {
+        first_name,
+        last_name,
+        image_url,
+        phone
+    })
+}

@@ -3,7 +3,7 @@ import styles from "./Profile.module.scss";
 import image from '../../../assets/profileImg.svg'
 import eye from '../../../assets/showPassword.png'
 import NavBar from "../../NavigationBar/NavBar";
-import {changeMyPhoto, getMyInfo} from "../../../api.auth";
+import {changeMyPhoto, changeProfileInfo, getMyInfo} from "../../../api.auth";
 import {useDispatch, useSelector} from "react-redux";
 import {setChange} from '../../../redux/UserSlice/UserSlice'
 import {useNavigate} from "react-router-dom";
@@ -23,6 +23,7 @@ function Profile() {
     })
     const [photo, setPhoto] = useState()
     const [isShown, setIsShown] = useState(false)
+    const [isSending, setIsSending] = useState(false)
 
     useEffect(()=>{
         const fetchData = async() =>{
@@ -66,13 +67,26 @@ function Profile() {
         setIsShown(!isShown)
     }
 
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            dispatch(setChange())
+            setIsSending(true)
+            await changeProfileInfo(user.id, user.last_name, user.first_name, user.image_url, user.phone)
+        } catch (e) {
+            console.log(e)
+        } finally {
+            setIsSending(false)
+        }
+    }
+
     return <>
         <div className={styles.profileSection}>
         <NavBar />
             <div className={styles.profileSectionFlexCol}>
             <h1 className={styles.profileTitle}>Профиль</h1>
-    
-            <form className={styles.profileContentBox}>
+
+                <form onSubmit={handleSubmit} className={styles.profileContentBox}>
                 <div className={styles.profileFlexCol1}>
                     <div className={styles.profileFlexRow}>
                         <div className={styles.profileFlexCol2}>
@@ -175,9 +189,10 @@ function Profile() {
                             <button onClick={handleImgChange} className={styles.profileChangeButton}>Изменить</button>
                         </div>
                     </div>
-                    {isChanging ? <button type="submit" onClick={handleClick}
+                    {isChanging ? <button type="submit"
                                           className={styles.profileEditButton}>Сохранить</button> :
-                        <button onClick={handleClick} className={styles.profileEditButton}>Редактировать</button>}
+                        <button onClick={handleClick} className={styles.profileEditButton}
+                                disabled={isSending}>Редактировать</button>}
                     <button className={styles.profileEditButton} onClick={e => handleLogOut(e)}>Выйти</button>
                 </div>
             </form>
