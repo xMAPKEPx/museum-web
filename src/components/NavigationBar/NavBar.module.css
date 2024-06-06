@@ -77,3 +77,9 @@ header {
 .profile {
     margin: auto;
 }
+
+.profile_img {
+    height: 51px;
+    width: 48px;
+    border-radius: 50px;
+}

@@ -1,11 +1,12 @@
 import React from "react";
 import styles from './NavBar.module.css';
-import logo from  '../../assets/logo.png'
+import logo from '../../assets/logo.png'
 import miniProfile from '../../assets/mini-profile.png'
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 
 const NavBar = () => {
     const isAuth = useSelector(state => state.auth.isAuth)
+    const userImage = useSelector(state => state.user.image)
     return  (
         <header>
             <nav className={styles.navbar}>
@@ -17,7 +18,9 @@ const NavBar = () => {
                     <li><a className={styles.navButtons} href="/">СОЦИАЛЬНЫЕ СЕТИ</a></li>
                 </ul>
                 {isAuth ?
-                    <a className={styles.profile} href="/profile"><img src={miniProfile} alt='Home' /> </a> :
+                    <a className={styles.profile} href="/profile"><img className={styles.profile_img}
+                                                                       src={userImage ? userImage : miniProfile}
+                                                                       alt='Home'/> </a> :
                     <div className={styles.loginBox}>
                         <a className={styles.loginButton} href="/login">ВХОД</a>
                     </div>

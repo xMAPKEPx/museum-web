@@ -1,8 +1,9 @@
-import { Navigate, Outlet } from "react-router-dom";
-import { useSelector, useDispatch} from "react-redux";
-import { useEffect } from "react";
-import { refreshToken } from "./api.auth";
-import { setAuth } from "./redux/AuthSlice/AuthSlice";
+import {Navigate, Outlet} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {getMyInfo, refreshToken} from "./api.auth";
+import {setAuth} from "./redux/AuthSlice/AuthSlice";
+import {setImage} from "./redux/UserSlice/UserSlice";
 
 const PrivateRoute = () => {
   const dispatch = useDispatch()
@@ -17,6 +18,14 @@ const PrivateRoute = () => {
     [dispatch]
   )
   const isAuth = useSelector((state) => state.auth.isAuth)
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await getMyInfo();
+            dispatch(setImage(response.data.image_url))
+        }
+        fetchData()
+    }, [isAuth])
 
   if (isAuth) {
      return <Outlet/>

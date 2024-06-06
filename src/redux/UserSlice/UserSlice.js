@@ -1,14 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
 
 const userSlice = createSlice({
   name: 'user',
   initialState: {
     user: {},
+    image: '',
     isChanging: false,
   },
   reducers: {
     setUser(state, action) {
       state.user = action.payload;
+    },
+    setImage(state, action) {
+      state.image = action.payload
     },
     setChange(state) {
         state.isChanging = !state.isChanging;
@@ -16,5 +20,5 @@ const userSlice = createSlice({
   },
 })
 
-export const { setUser, setChange } = userSlice.actions
+export const {setUser, setChange, setImage} = userSlice.actions
 export default userSlice.reducer
