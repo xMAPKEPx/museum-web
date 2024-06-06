@@ -170,6 +170,7 @@
 }
 
 .profileChangeButton {
+    cursor: pointer;
     position: relative;
     display: flex;
     justify-content: center;
@@ -182,6 +183,7 @@
 }
 
 .selectButton {
+    cursor: pointer;
     border: 2px solid #505050;
     position: relative;
     display: flex;
@@ -195,6 +197,7 @@
 }
 
 .profileEditButton {
+    cursor: pointer;
     position: relative;
     display: flex;
     justify-content: center;
