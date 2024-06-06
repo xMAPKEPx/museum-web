@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5173:5173"
-    volumes:
-      - .:/app:delegated
-      - /app/node_modules
+    #    volumes:
+    #      - .:/app:delegated
+    #      - /app/node_modules
     command: tail -f /dev/null
