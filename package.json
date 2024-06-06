@@ -50,5 +50,6 @@
     "vite-plugin-svgr": "^4.2.0",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.6.0"
-  }
+  },
+  "proxy": "https://engine.vstrechya.space/"
 }

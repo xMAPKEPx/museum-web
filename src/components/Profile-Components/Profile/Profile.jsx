@@ -169,8 +169,7 @@ function Profile() {
                                 id="myImage"
                                 // Event handler to capture file selection and update the state
                                 onChange={(event) => {
-                                    console.log(event.target.files[0]); // Log the selected file
-                                    setPhoto(event.target.files[0]); // Update the state with the selected file
+                                    setPhoto(event.target.files[0])
                                 }}
                             />
                             <button onClick={handleImgChange} className={styles.profileChangeButton}>Изменить</button>
