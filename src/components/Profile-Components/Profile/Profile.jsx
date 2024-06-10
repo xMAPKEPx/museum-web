@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import styles from "./Profile.module.scss";
 import image from '../../../assets/profileImg.svg'
 import eye from '../../../assets/showPassword.png'
-import NavBar from "../../NavigationBar/NavBar";
 import {changeMyPhoto, changeProfileInfo, getMyInfo} from "../../../api.auth";
 import {useDispatch, useSelector} from "react-redux";
 import {setChange} from '../../../redux/UserSlice/UserSlice'
@@ -39,7 +38,8 @@ function Profile() {
     }
     const handleLogOut = (e) => {
         e.preventDefault();
-        localStorage.removeItem('token');
+        localStorage.removeItem('access-token');
+        localStorage.removeItem('refresh-token');
         navigate('/login')
     }
 
@@ -82,9 +82,8 @@ function Profile() {
 
     return <>
         <div className={styles.profileSection}>
-        <NavBar />
             <div className={styles.profileSectionFlexCol}>
-            <h1 className={styles.profileTitle}>Профиль</h1>
+                <h1 className={styles.profileTitle}>Профиль</h1>
 
                 <form onSubmit={handleSubmit} className={styles.profileContentBox}>
                 <div className={styles.profileFlexCol1}>

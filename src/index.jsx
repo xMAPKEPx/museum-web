@@ -11,21 +11,23 @@ import Exhibitions from "./pages/Museum-Exhibitions/Exhibitions";
 import {Provider} from "react-redux";
 import {store} from './redux/store'
 import ProfilePage from "./pages/Profile/ProfilePage";
+import ExhibitionCard from "./components/Exhibitions-components/ExhibitionDetails/ExhibitionCard";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<MainPage />} />
       <Route path='/exhibitions' element={<Exhibitions />}>
-        <Route path='/exhibitions/:id' element={<Exhibitions />} />
+        <Route path='/exhibitions/:id' element={<ExhibitionCard />} />
       </Route>
       <Route path="/archives" element={<FamilyArchives />}>
-        <Route path="/archives/:id" element={<FamilyArchives />} />
+        {/*<Route path="/archives/:id" element={<ArchiveCard />} />*/}
       </Route>
       <Route path='/login' element={<Auth />}></Route>
       <Route path='/signup' element={<Signup />}></Route>
       <Route path='' element = {<PrivateRoute />}>
-        <Route path="/profile" element = {<ProfilePage />} />
+          <Route path="/profile" element = {<ProfilePage />}></Route>
+          {/*<Route path='/me/archives' element={<ArchiveCard1 />}></Route>*/}
       </Route>
     </Route>
   )

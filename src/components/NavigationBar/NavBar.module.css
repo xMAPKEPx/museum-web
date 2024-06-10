@@ -1,3 +1,4 @@
+/* src/components/Header.css */
 header {
     background-color: rgb(193, 167, 127);
     display: flex;
@@ -6,30 +7,36 @@ header {
     position: fixed;
     top: 0;
     z-index: 10;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header_placeholder {
+    height: 108px; /* Высота placeholder совпадает с высотой header */
 }
 
 .navbar {
     color: rgba(0, 0, 0, 1);
     display: flex;
     font: 400 18px/1.22 "Montserrat", Helvetica, Arial, serif;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .home {
-    margin-top: 7px;
-    margin-right: 200px;
-    margin-left: 50px;
+    margin: 7px 0;
 }
 
 .navigation {
     display: flex;
     justify-content: space-between;
-    width: 1223px;
+    flex-grow: 1;
+    margin: 0 20px;
 }
 
 .navigation li {
-    margin: auto;
-    /*margin-right: 100px;*/
-    width: auto;
+    margin: auto 10px; /* Отступ между элементами */
     list-style-type: none;
     white-space: nowrap;
 }
@@ -49,8 +56,6 @@ header {
 }
 
 .loginBox {
-    margin: auto auto auto 0px;
-    border: solid #ccc;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -58,12 +63,13 @@ header {
     padding: 5px 20px;
     gap: 10px;
     background: #FFFFFF;
+    border: solid #ccc;
     border-radius: 10px;
     font: 400 16px/1.22 "Montserrat", Helvetica, Arial, serif;
+    margin-left: auto;
 }
 
 .loginButton, .loginButton:visited {
-    margin: auto;
     text-decoration: none;
     color: #000000;
 }
@@ -82,7 +88,6 @@ header {
 }
 
 .profile {
-    margin: auto;
     margin-left: 45px;
 }
 
@@ -90,4 +95,88 @@ header {
     height: 51px;
     width: 48px;
     border-radius: 50px;
+}
+
+/* Кнопка для открытия меню на маленьких экранах */
+.menu_toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Добавим стили для разрешения 1280x720 */
+@media (max-width: 1380px) {
+    header {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navigation li {
+        margin: auto 10px; /* Уменьшим отступ между элементами */
+    }
+
+    .profile {
+        margin-left: 10px; /* Уменьшим отступ для кнопки профиля */
+    }
+    .line {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .home {
+        margin: 7px 0;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        display: none; /* Скрыть меню по умолчанию */
+    }
+
+    .navigation li {
+        margin: 10px 0;
+    }
+
+    .loginBox {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .profile {
+        margin: 10px 0 0 0;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .menu_toggle {
+        display: block; /* Показать кнопку меню */
+    }
+}
+
+/* Показываем меню при активной кнопке */
+.navigation.active {
+    display: flex;
 }

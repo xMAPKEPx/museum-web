@@ -45,3 +45,19 @@ export const changeProfileInfo = (id, last_name, first_name, image_url, phone) =
         phone
     })
 }
+
+export const getExhibitions = () => {
+    return instance.get(`/exhibitions`)
+}
+
+export const getExhibitionDetails = (id) => {
+    return instance.get(`/exhibitions/${id}/`)
+}
+
+export const getArchieves = () => {
+    return instance.get(`/archieves`)
+}
+
+export const getArchieveDetails = (id) => {
+    return instance.get(`/archieves/${id}/`)
+}

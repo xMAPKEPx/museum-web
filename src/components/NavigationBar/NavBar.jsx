@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import styles from './NavBar.module.css';
 import logo from '../../assets/file.png'
 import miniProfile from '../../assets/mini-profile.png'
@@ -12,6 +12,11 @@ const NavBar = () => {
     const isAuth = useSelector(state => state.auth.isAuth);
     const userImage = useSelector(state => state.user.image);
     const navigate = useNavigate()
+    const [menuActive, setMenuActive] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuActive(!menuActive);
+    };
     useEffect(() => {
         const fetchData = async () => {
             const response = await getMyInfo();
@@ -19,11 +24,14 @@ const NavBar = () => {
         }
         fetchData()
     }, [isAuth]);
-    return  (
+    return <>
         <header>
             <nav className={styles.navbar}>
                 <a className={styles.home} href="/"><img src={logo} width="240" alt='Home'/> </a>
-                <ul className={styles.navigation}>
+                <button className={styles.menu_toggle} aria-label="Open Navigation Menu" onClick={toggleMenu}>
+                    ☰
+                </button>
+                <ul className={`${styles.navigation} ${menuActive ? styles.active : ''}`}>
                     <li>
                         <button className={styles.navButtons} onClick={() => navigate("/exhibitions")}>КАТАЛОГ
                             ВЫСТАВОК
@@ -54,7 +62,8 @@ const NavBar = () => {
             </nav>
             <div className={styles.line}></div>
         </header>
-    )
+        <div className={styles.header_placeholder}></div>
+    </>
 }
 
 export default NavBar;
