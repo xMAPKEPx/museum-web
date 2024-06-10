@@ -5,11 +5,13 @@ import miniProfile from '../../assets/mini-profile.png'
 import {useDispatch, useSelector} from "react-redux";
 import {getMyInfo} from "../../api.auth";
 import {setImage} from "../../redux/UserSlice/UserSlice";
+import {useNavigate} from "react-router-dom";
 
 const NavBar = () => {
     const dispatch = useDispatch()
     const isAuth = useSelector(state => state.auth.isAuth);
     const userImage = useSelector(state => state.user.image);
+    const navigate = useNavigate()
     useEffect(() => {
         const fetchData = async () => {
             const response = await getMyInfo();
@@ -22,10 +24,24 @@ const NavBar = () => {
             <nav className={styles.navbar}>
                 <a className={styles.home} href="/"><img src={logo} width="240" alt='Home'/> </a>
                 <ul className={styles.navigation}>
-                    <li><a className={styles.navButtons} href="/exhibitions">КАТАЛОГ ВЫСТАВОК</a></li>
-                    <li><a className={styles.navButtons} href="/archives">ХРАНИЛИЩЕ КОЛЛЕКЦИЙ</a></li>
-                    <li><a className={styles.navButtons} href="/">КОНСТРУКТОР ВЫСТАВОК</a></li>
-                    <li><a className={styles.navButtons} href="/">СОЦИАЛЬНЫЕ СЕТИ</a></li>
+                    <li>
+                        <button className={styles.navButtons} onClick={() => navigate("/exhibitions")}>КАТАЛОГ
+                            ВЫСТАВОК
+                        </button>
+                    </li>
+
+                    <li>
+                        <button className={styles.navButtons} onClick={() => navigate("/archives")}>ХРАНИЛИЩЕ
+                            КОЛЛЕКЦИЙ
+                        </button>
+                    </li>
+                    <li>
+                        <button className={styles.navButtons} onClick={() => navigate("/")}>КОНСТРУКТОР ВЫСТАВОК
+                        </button>
+                    </li>
+                    <li>
+                        <button className={styles.navButtons} onClick={() => navigate("/")}>СОЦИАЛЬНЫЕ СЕТИ</button>
+                    </li>
                 </ul>
                 {isAuth ?
                     <a className={styles.profile} href="/profile"><img className={styles.profile_img}

@@ -16,26 +16,32 @@ header {
 
 .home {
     margin-top: 7px;
-    margin-right: 270px;
-    margin-left: 75px;
+    margin-right: 200px;
+    margin-left: 50px;
 }
 
 .navigation {
     display: flex;
+    justify-content: space-between;
     width: 1223px;
 }
 
 .navigation li {
     margin: auto;
-    margin-right: 100px;
+    /*margin-right: 100px;*/
     width: auto;
     list-style-type: none;
     white-space: nowrap;
 }
 
 .navButtons, .navButtons:visited {
+    padding: 10% 0;
     text-decoration: none;
     color: #000000;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font: 400 18px/1.22 "Montserrat", Helvetica, Arial, serif;
 }
 
 .navButtons:hover {
@@ -43,7 +49,7 @@ header {
 }
 
 .loginBox {
-    margin: auto auto auto 50px;
+    margin: auto auto auto 0px;
     border: solid #ccc;
     display: flex;
     flex-direction: row;
@@ -68,15 +74,16 @@ header {
 
 .line {
     position: absolute;
-    width: 1832px;
-    height: 1px;
-    left: 44px;
+    width: 98%;
+    height: 2px;
+    left: 30px;
     top: 100px;
     background: #000000;
 }
 
 .profile {
     margin: auto;
+    margin-left: 45px;
 }
 
 .profile_img {
