@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './Exhibitions.module.scss';
 import {getExhibitions} from "../../../api.auth";
 import {useNavigate} from "react-router-dom";
+import image from '../../../assets/cardImage.png'
 
 const ExhibitionsList = () => {
     const [exhibitions, setExhibitions] = useState([]);
@@ -46,7 +47,7 @@ const ExhibitionsList = () => {
                         <div className={styles.item}>
                             <img
                                 className={styles.image2}
-                                src={''}
+                                src={image}
                                 alt="alt text"
                             />
                             <h4 className={styles.highlight}>Описание фотографии</h4>
@@ -55,7 +56,7 @@ const ExhibitionsList = () => {
                         <div className={styles.item}>
                             <img
                                 className={styles.image2}
-                                src={''}
+                                src={image}
                                 alt="alt text"
                             />
                             <h4 className={styles.highlight}>Описание фотографии</h4>
@@ -64,7 +65,7 @@ const ExhibitionsList = () => {
                         <div className={styles.item}>
                             <img
                                 className={styles.image2}
-                                src={''}
+                                src={image}
                                 alt="alt text"
                             />
                             <h4 className={styles.highlight}>Описание фотографии</h4>
@@ -73,7 +74,7 @@ const ExhibitionsList = () => {
                         <div className={styles.item}>
                             <img
                                 className={styles.image2}
-                                src={''}
+                                src={image}
                                 alt="alt text"
                             />
                             <h4 className={styles.highlight}>Описание фотографии</h4>
@@ -82,7 +83,7 @@ const ExhibitionsList = () => {
                         <div className={styles.item}>
                             <img
                                 className={styles.image2}
-                                src={''}
+                                src={image}
                                 alt="alt text"
                             />
                             <h4 className={styles.highlight}>Описание фотографии</h4>
@@ -91,7 +92,7 @@ const ExhibitionsList = () => {
                         <div className={styles.item}>
                             <img
                                 className={styles.image2}
-                                src={''}
+                                src={image}
                                 alt="alt text"
                             />
                             <h4 className={styles.highlight}>Описание фотографии</h4>
@@ -100,7 +101,7 @@ const ExhibitionsList = () => {
                         <div className={styles.item}>
                             <img
                                 className={styles.image2}
-                                src={''}
+                                src={image}
                                 alt="alt text"
                             />
                             <h4 className={styles.highlight}>Описание фотографии</h4>

@@ -1,15 +1,10 @@
-@use "../../utils" as *;
-@use "../../global" as *;
-
-.profileSection {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: url('../../../assets/1st_background.png') center center / cover no-repeat;
+.main {
+    background: wheat url("../../../assets/1st_background.png") no-repeat center center;
+    height: 1080px;
     overflow: hidden;
 }
 
-.profileSectionFlexCol {
+.SectionFlexCol {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -18,32 +13,9 @@
     margin: 199px auto 240px;
     width: 1150px;
     max-width: 85%;
-    @include md {
-        margin: 150px auto;
-    }
-    @include xs {
-        margin: 80px auto;
-    }
-    @include tn {
-        margin: 50px auto;
-    }
 }
 
-.profileTitle {
-    position: relative;
-    width: 94.78%;
-    font: 300 32px/1.21 "Montserrat", Helvetica, Arial, serif;
-    color: rgb(0, 0, 0);
-    @include md {
-        align-items: flex-start;
-        font-size: 30px;
-    }
-    @include xxs {
-        font-size: 26px;
-    }
-}
-
-.profileContentBox {
+.contentBox {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -52,7 +24,7 @@
     border-radius: 10px 10px 10px 10px;
 }
 
-.profileFlexCol1 {
+.flexCol1 {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -60,27 +32,16 @@
     margin: 60px auto 24px;
     width: 974.046875px;
     max-width: 85%;
-    @include xs {
-        gap: 80px 0;
-    }
-    @include tn {
-        gap: 50px 0;
-        margin: 50px auto 24px;
-    }
 }
-
-.profileFlexRow {
+.flexRow {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 0 10px;
-    @include tn {
-        column-gap: 8px;
-    }
 }
 
-.profileFlexCol2 {
+.flexCol2 {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -89,10 +50,27 @@
     min-width: 0;
 }
 
-.profileFlexCol3 {
+.flexCol3 {
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.inputLabel {
+    position: relative;
+    font: 300 18px/1.22 "Montserrat", Helvetica, Arial, serif;
+    color: rgb(0, 0, 0);
+}
+
+@media (max-width: 992px) {
+    .inputLabel{
+        align-items: flex-start;
+        font-size: 16px;
+    }
+    .input {
+        align-items: flex-start;
+        font-size: 16px;
+    }
 }
 
 .input {
@@ -103,23 +81,9 @@
     margin: 16px 2px 0;
     font: 400 18px/1.22 "Montserrat", Helvetica, Arial, serif;
     color: rgb(0, 0, 0);
-    @include md {
-        align-items: flex-start;
-        font-size: 16px;
-    }
 }
 
-.inputLabel {
-    position: relative;
-    font: 300 18px/1.22 "Montserrat", Helvetica, Arial, serif;
-    color: rgb(0, 0, 0);
-    @include md {
-        align-items: flex-start;
-        font-size: 16px;
-    }
-}
-
-.profileLine1 {
+.line {
     position: relative;
     margin: 1px 0 0;
     width: 100%;
@@ -128,33 +92,7 @@
     background-color: rgb(143, 143, 143);
 }
 
-.profileFlexCol4 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 1px 0;
-}
-
-.profilePasswordFlexRow {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    gap: 0 10px;
-    margin: 0 2px;
-    @include tn {
-        column-gap: 8px;
-    }
-}
-
-.profilePasswordImage {
-    position: relative;
-    margin: 20px 0 6px;
-    width: 17px;
-    height: 14px;
-    object-fit: cover;
-}
-
-.profileFlexCol5 {
+.flexCol4 {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -167,19 +105,6 @@
     position: relative;
     width: 100%;
     object-fit: cover;
-}
-
-.profileChangeButton {
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    font: 300 18px/1.22 "Montserrat", Helvetica, Arial, serif;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    background-color: rgba(232, 211, 182, 0.737);
-    border-radius: 8px 8px 8px 8px;
-    padding: 4px 8px 4px 8px;
 }
 
 .selectButton {
@@ -195,8 +120,20 @@
     border-radius: 8px 8px 8px 8px;
     padding: 4px 8px 4px 8px;
 }
-
-.profileEditButton {
+.changeButton {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font: 300 18px/1.22 "Montserrat", Helvetica, Arial, serif;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    background-color: rgba(232, 211, 182, 0.737);
+    border-radius: 8px 8px 8px 8px;
+    padding: 4px 8px 4px 8px;
+}
+.submitButton {
     cursor: pointer;
     position: relative;
     display: flex;
@@ -210,15 +147,6 @@
     background-color: rgba(232, 211, 182, 0.737);
     border-radius: 8px 8px 8px 8px;
     padding: 6.5px 30px 6.5px 30px;
-}
-
-.navButton {
-    outline: none;
-    border: none;
-    background-color: transparent;
-    font: 400 18px/1.22 "Montserrat", Helvetica, Arial, serif;
-    position: absolute;
-    bottom: 26px;
 }
 
 .hidden {

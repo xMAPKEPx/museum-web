@@ -1,0 +1,50 @@
+@use "../../components/utils" as *;
+@use "../../components/global" as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(232, 210, 182);
+  overflow: hidden;
+}
+
+.section1 {
+  height: 1080px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: url(../../assets/1st_background.png) center center / cover no-repeat;
+}
+.flex_col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 99px 0;
+  margin: 20px auto 50px;
+  width: 1520.0625px;
+  max-width: 85%;
+  @include md {
+    margin: 150px auto;
+  }
+  @include xs {
+    gap: 80px 0;
+    margin: 80px auto;
+  }
+  @include tn {
+    gap: 50px 0;
+    margin: 50px auto;
+  }
+}
+
+.title {
+  position: relative;
+  font: 400 32px/1.25 "Merriweather", Helvetica, Arial, serif;
+  color: rgba(0, 0, 0, 0.8);
+  @include md {
+    align-items: flex-start;
+    font-size: 30px;
+  }
+  @include xxs {
+    font-size: 26px;
+  }
+}

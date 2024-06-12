@@ -54,10 +54,24 @@ export const getExhibitionDetails = (id) => {
     return instance.get(`/exhibitions/${id}/`)
 }
 
-export const getArchieves = () => {
-    return instance.get(`/archieves`)
+export const getCollections = async (id) => {
+    const response = await instance.get(`/users/${id}/`)
+    return response.data.collections
 }
 
-export const getArchieveDetails = (id) => {
-    return instance.get(`/archieves/${id}/`)
+export const getCollectionDetails = (id) => {
+    return instance.get(`/collections/${id}/`)
+}
+
+export const createCollection = (name) => {
+    return instance.post(`/collections/create`, {
+        name,
+    })
+}
+
+export const updateCollection = (id, image, description='') => {
+    return instance.post(`/collections/${id}/items/add/`, {
+        "image_url": image,
+        "description": description,
+    })
 }

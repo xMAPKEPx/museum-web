@@ -28,9 +28,6 @@ const NavBar = () => {
         <header>
             <nav className={styles.navbar}>
                 <a className={styles.home} href="/"><img src={logo} width="240" alt='Home'/> </a>
-                <button className={styles.menu_toggle} aria-label="Open Navigation Menu" onClick={toggleMenu}>
-                    ☰
-                </button>
                 <ul className={`${styles.navigation} ${menuActive ? styles.active : ''}`}>
                     <li>
                         <button className={styles.navButtons} onClick={() => navigate("/exhibitions")}>КАТАЛОГ
@@ -39,7 +36,7 @@ const NavBar = () => {
                     </li>
 
                     <li>
-                        <button className={styles.navButtons} onClick={() => navigate("/archives")}>ХРАНИЛИЩЕ
+                        <button className={styles.navButtons} onClick={() => navigate("/collections")}>ХРАНИЛИЩЕ
                             КОЛЛЕКЦИЙ
                         </button>
                     </li>
@@ -50,17 +47,20 @@ const NavBar = () => {
                     <li>
                         <button className={styles.navButtons} onClick={() => navigate("/")}>СОЦИАЛЬНЫЕ СЕТИ</button>
                     </li>
+                    {isAuth ?
+                        <a className={styles.profile} href="/profile"><img className={styles.profile_img}
+                                                                           src={userImage ? userImage : miniProfile}
+                                                                           alt='Home'/> </a> :
+                        <div className={styles.loginBox}>
+                            <a className={styles.loginButton} href="/login">ВХОД</a>
+                        </div>
+                    }
                 </ul>
-                {isAuth ?
-                    <a className={styles.profile} href="/profile"><img className={styles.profile_img}
-                                                                       src={userImage ? userImage : miniProfile}
-                                                                       alt='Home'/> </a> :
-                    <div className={styles.loginBox}>
-                        <a className={styles.loginButton} href="/login">ВХОД</a>
-                    </div>
-                }
             </nav>
             <div className={styles.line}></div>
+            <button className={styles.menu_toggle} aria-label="Open Navigation Menu" onClick={toggleMenu}>
+                ☰
+            </button>
         </header>
         <div className={styles.header_placeholder}></div>
     </>

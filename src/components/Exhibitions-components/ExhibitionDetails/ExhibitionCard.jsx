@@ -1,9 +1,9 @@
-// ExhibitionDetail.js
+// ExhibitionCard.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {getExhibitionDetails } from "../../../api.auth";
 
-const ExhibitionDetail = () => {
+const ExhibitionCard = () => {
     const { id } = useParams();
     const [exhibition, setExhibition] = useState(null);
 
@@ -36,4 +36,4 @@ const ExhibitionDetail = () => {
     );
 };
 
-export default ExhibitionDetail;
+export default ExhibitionCard;

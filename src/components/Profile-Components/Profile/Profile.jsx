@@ -188,6 +188,7 @@ function Profile() {
                             <button onClick={handleImgChange} className={styles.profileChangeButton}>Изменить</button>
                         </div>
                     </div>
+                    <button className={styles.navButton} onClick={() => navigate('/me/collections')}>К моим коллекциям</button>
                     {isChanging ? <button type="submit"
                                           className={styles.profileEditButton}>Сохранить</button> :
                         <button onClick={handleClick} className={styles.profileEditButton}
