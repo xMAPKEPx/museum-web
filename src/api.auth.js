@@ -64,7 +64,7 @@ export const getCollectionDetails = (id) => {
 }
 
 export const createCollection = (name) => {
-    return instance.post(`/collections/create`, {
+    return instance.post(`/collections/create/`, {
         name,
     })
 }
