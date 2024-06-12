@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import styles from './CreateCollections.module.css';
 import NavBar from "../../NavigationBar/NavBar";
 import Footer from "../../Footer/Footer";
@@ -6,36 +6,39 @@ import {createCollection, updateCollection} from "../../../api.auth";
 import {useNavigate} from "react-router-dom";
 
 const CreateCollectionPage = () => {
-    const [data, setData] = useState({
-        name: ''
-    })
+    const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [photo, setPhoto] = useState();
+    const id = useRef('');
     const navigate = useNavigate();
-
-
-    const handleChange = (evt) => {
-        const {name, value} = evt.target
-        setData(prevFormData => ({
-            ...prevFormData,
-            [name]: value
-        }))
-    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const formData = new FormData();
         formData.append('img', photo)
         try {
-            const response = await createCollection(data.name)
-            setData(response.data)
-            await updateCollection(data.id, formData, description)
+            const response = await createCollection(name)
+            id.current = response.data.id
             navigate(-1)
+        } catch (e) {
+            console.log(e)
+        } finally {
+            await update();
+        }
+    }
+
+    const update = async () => {
+        const formData = new FormData();
+        formData.append('img', photo)
+        formData.append('description', description)
+        formData.append('collection', id.current)
+        try {
+            await updateCollection(id.current, formData);
+            window.location.reload();
         } catch (e) {
             console.log(e)
         }
     }
-
 
     return <>
         <NavBar />
@@ -51,8 +54,8 @@ const CreateCollectionPage = () => {
                                         name="name"
                                         id="name"
                                         className={styles.input}
-                                        onChange={handleChange}
-                                        value={data.name}
+                                        onChange={e => setName(e.target.value)}
+                                        value={name}
                                         required
                                     />
                                     <hr className={styles.line} size={1}/>

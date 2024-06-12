@@ -18,22 +18,24 @@ import CollectionCard from "./components/Collections-components/CollectionCard/C
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<MainPage />} />
-      <Route path='/exhibitions' element={<Exhibitions />}>
+        <Route path="/" element={<MainPage />} />
+
+        <Route path='/exhibitions' element={<Exhibitions />} />
         <Route path='/exhibitions/:id' element={<ExhibitionCard />} />
-      </Route>
-      <Route path="/collections" element={<CollectionsPage />}>
+
+        <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/collections/:id" element={<CollectionCard />} />
-      </Route>
-      <Route path='/login' element={<Auth />}></Route>
-      <Route path='/signup' element={<Signup />}></Route>
-      <Route path='' element = {<PrivateRoute />}>
+
+        <Route path='/login' element={<Auth />}></Route>
+        <Route path='/signup' element={<Signup />}></Route>
+
+        <Route path='' element = {<PrivateRoute />}>
           <Route path="/profile" element = {<ProfilePage />}></Route>
-          <Route path="/me/collections" element={<CollectionsPage user={'me'} />}>
-              <Route path='/me/collections/:id' element={<CollectionCard />} />
-          </Route>
+          <Route path="/me/collections" element={<CollectionsPage user={'me'} />} />
+          <Route path='/me/collections/:id' element={<CollectionCard />} />
+
           <Route path='/collections/create' element={<CreateCollection />} />
-      </Route>
+        </Route>
     </Route>
   )
 );

@@ -69,9 +69,6 @@ export const createCollection = (name) => {
     })
 }
 
-export const updateCollection = (id, image, description='') => {
-    return instance.post(`/collections/${id}/items/add/`, {
-        "image_url": image,
-        "description": description,
-    })
+export const updateCollection = (id, formData) => {
+    return instance.post(`/collections/${id}/items/add/`, formData);
 }

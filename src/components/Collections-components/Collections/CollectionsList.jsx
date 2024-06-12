@@ -7,13 +7,13 @@ const CollectionsList = ({ collections }) => {
     return (
         <div className={styles.grid}>
             {collections.map((item, index) => (
-                <div className={styles.item} key={index} onClick={() => navigate(`collections/${item.id}/`)}>
+                <div className={styles.item} key={index} onClick={() => navigate(`${item.id}`)}>
                     <img
                         className={styles.image2}
                         src={item.image_url}
                         alt={`Коллекция пользователя`}
                     />
-                    <h4 className={styles.highlight}>{item.description}</h4>
+                    <h4 className={styles.highlight}>{item.name}</h4>
                 </div>
             ))}
         </div>

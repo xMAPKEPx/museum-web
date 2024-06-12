@@ -28,7 +28,7 @@ const ExhibitionsList = () => {
         <main className={styles.main}>
             <section className={styles.section1}>
                 <div className={styles.flex_col}>
-                    <h1 className={styles.title}>Хранилище коллекций</h1>
+                    <h1 className={styles.title}>Каталог выставок</h1>
 
                     <div className={styles.grid}>
 

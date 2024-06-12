@@ -1,0 +1,11 @@
+h2 {
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+
+.main {
+    height: 1080px;
+    background: url("../../../assets/1st_background.png") center center no-repeat;
+}

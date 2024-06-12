@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {getCollectionDetails} from "../../../api.auth";
+import styles from "./CollectionCard.module.css";
+import NavBar from "../../NavigationBar/NavBar";
+import Footer from "../../Footer/Footer";
 
 const CollectionCard = () => {
     const { id } = useParams();
@@ -10,7 +13,8 @@ const CollectionCard = () => {
         const fetchCollection = async () => {
             try {
                 const response = await getCollectionDetails(id)
-                setCollection(response.data);
+                setCollection(response.data[0]);
+                console.log(response.data[0])
             } catch (e) {
                 console.log('Error fetching collection details: ', e)
             }
@@ -22,15 +26,17 @@ const CollectionCard = () => {
         return <div>Loading...</div>;
     }
 
-    return (
-        <div>
+    return <>
+        <NavBar />
+        <div className={styles.main}>
             <h2>{collection.name}</h2>
-            {/*<p>{collection.description}</p>*/}
+            <p>{collection.description}</p>
             <div>
                 <img src={collection.image_url} alt={collection.description} />
             </div>
         </div>
-    );
+        <Footer />
+    </>
 };
 
 export default CollectionCard;
