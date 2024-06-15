@@ -11,6 +11,7 @@ const LoginForm = () => {
     const [password, setPassword] = useState('')
     const [isLogin, setIsLogin] = useState(false)
     const [isError, setIsError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState('')
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -25,9 +26,14 @@ const LoginForm = () => {
             dispatch(setAuth(localStorage.getItem('access-token')!==null))
             navigate('/')
         } catch (e) {
-            setIsError(true)
-            setIsLogin(false)
-            console.log('Error: ' + e)
+            if (e.response && (e.response.status === 401 || e.response.status === 400)) {
+                setIsError(true);
+                setErrorMessage(e.response.data.detail==='Не найдено активной учетной записи с указанными данными'? 'Неправильный E-mail или пароль'
+                    : "Произошла непредвиденная ошибка");
+            } else {
+                console.log('Error: ' + e);
+            }
+            setIsLogin(false);
         } finally {
             setIsLogin(false)
         }
@@ -65,7 +71,7 @@ const LoginForm = () => {
                 <button className={styles.login} type="submit">Войти</button>
                 <a  href="/signup" className={styles.signup}>Регистрация</a>
                 {isLogin && <span className={styles.success}>Вы успешно вошли в аккаунт</span>}
-                {isError && <span className={styles.error}>Произошла ошибка</span>}
+                {isError && <span className={styles.error}>{errorMessage}</span>}
             </form>
         </div>
     </>

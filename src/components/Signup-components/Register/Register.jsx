@@ -13,6 +13,7 @@ const Register = () => {
         re_password: '',
     })
     const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('')
     const [submitted, setSubmitted] = useState(false);
     const navigate = useNavigate()
 
@@ -26,20 +27,65 @@ const Register = () => {
 
     const handleSubmit = async(evt) => {
         evt.preventDefault()
-        try{
-            if (data.password === data.re_password) {
-                await signup(data.last_name, data.first_name, data.email, data.password, data.re_password)
-                setSubmitted(true)
-                setError(false)
-                navigate('/login')
-            } else {
-                setError(true)
-                setSubmitted(false)
+
+        const commonPasswords = ['password', '12345678', 'qwerty', 'abc123', 'password1']; // список распространенных паролей
+        const passwordContainsUserInfo = (password, lastName, firstName, email) => {
+            const lowerPassword = password.toLowerCase();
+            return (
+                lowerPassword.includes(lastName.toLowerCase()) ||
+                lowerPassword.includes(firstName.toLowerCase()) ||
+                lowerPassword.includes(email.split('@')[0].toLowerCase())
+            );
+        };
+
+        const isPasswordValid = (password, lastName, firstName, email) => {
+            if (password.length < 8) {
+                return {valid: false, error: 'Пароль должен быть длиннее или равен 8 символам'};
             }
-        } catch (e){
-            console.log("Error: " + e)
+            if (commonPasswords.includes(password)) {
+                return {valid: false, error: 'Пароль слишком часто используется'};
+            }
+            if (/^\d+$/.test(password)) {
+                return {valid: false, error: 'Пароль не может состоять только из цифр'};
+            }
+            if (passwordContainsUserInfo(password, lastName, firstName, email)) {
+                return {valid: false, error: 'Пароль не должен содержать ваши данные'};
+            }
+            return {valid: true};
+        };
+
+        try {
+            const {last_name, first_name, email, password, re_password} = data;
+
+            if (password !== re_password) {
+                setError(true);
+                setSubmitted(false);
+                setErrorMessage('Пароли не совпадают');
+                return;
+            }
+
+            const validation = isPasswordValid(password, last_name, first_name, email);
+            if (!validation.valid) {
+                setError(true);
+                setSubmitted(false);
+                setErrorMessage(validation.error);
+                return;
+            }
+
+            await signup(last_name, first_name, email, password, re_password);
+            setSubmitted(true);
+            setError(false);
+            navigate('/login');
+        } catch (e) {
+            if (e.response && (e.response.status === 401 || e.response.status === 400)) {
+                setError(true);
+                setErrorMessage(e.response.data.detail || "Пользователь с таким email уже существует");
+            } else {
+                console.log('Error: ' + e);
+            }
+            setSubmitted(false);
         } finally {
-            setSubmitted(false)
+            setSubmitted(false);
         }
     }
 
@@ -54,6 +100,7 @@ const Register = () => {
                         type="text"
                         name="last_name"
                         id="last_name"
+                        autoComplete='additional-name'
                         className={styles.input}
                         required 
                         onChange={handleChange}
@@ -67,6 +114,7 @@ const Register = () => {
                         type="text"
                         name="first_name"
                         id="first_name"
+                        autoComplete='name'
                         className={styles.input} 
                         required
                         onChange={handleChange}
@@ -79,6 +127,7 @@ const Register = () => {
                         type="email"
                         name="email"
                         id="email"
+                        autoComplete='email'
                         className={styles.input} 
                         required
                         onChange={handleChange}
@@ -91,6 +140,7 @@ const Register = () => {
                         type="password"
                         name="password"
                         id="password"
+                        autoComplete='off'
                         className={styles.input}
                         required
                         onChange={handleChange}
@@ -103,12 +153,13 @@ const Register = () => {
                         type="password"
                         name="re_password"
                         id="re_password"
+                        autoComplete='off'
                         className={styles.input}
                         required
                         onChange={handleChange}
                         value={data.re_password}
                     />
-                    {error && <span className={styles.error}>Пароли отличаются!</span>}
+                    {error && <span className={styles.error}>{errorMessage}</span>}
                 </div>
                 <button className={styles.register} type="submit">Зарегистрироваться</button>
                 {submitted && <span className={styles.success}>Вы успешно зарегистрировались!</span>}

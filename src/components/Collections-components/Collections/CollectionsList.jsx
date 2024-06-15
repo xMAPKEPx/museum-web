@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from "./CollectionsList.module.scss";
 
 const CollectionsList = ({ collections }) => {
     const navigate = useNavigate();
+
+    useEffect(() => {
+
+    }, [])
+
     return (
         <div className={styles.grid}>
             {collections.map((item, index) => (

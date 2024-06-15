@@ -3,7 +3,7 @@ import Footer from '../../components/Footer/Footer.jsx'
 import NavBar from "../../components/NavigationBar/NavBar";
 import CollectionsList from "../../components/Collections-components/Collections/CollectionsList";
 import React, {useEffect, useState} from "react";
-import {getCollections} from "../../api.auth";
+import {getCollectionDetails, getCollections} from "../../api.auth";
 import {useNavigate} from "react-router-dom";
 
 function CollectionsPage({user = '0'}) {
@@ -13,6 +13,12 @@ function CollectionsPage({user = '0'}) {
     const fetchData = async () => {
       try {
         const response = await getCollections(user)
+        for(let i = 0; i < response.length; i++) {
+          await getCollectionDetails(response[i].id)
+              .then(res => res.data[0].image_url)
+              .then(res => response[i].image_url = res)
+              .catch(e => console.log(e));
+        }
         setCollections(response)
       } catch (e) {
         console.log(e)

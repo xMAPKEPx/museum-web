@@ -29,6 +29,7 @@ const CollectionCard = () => {
     return <>
         <NavBar />
         <div className={styles.main}>
+            <br/><br/>
             <h2>{collection.name}</h2>
             <p>{collection.description}</p>
             <div>
