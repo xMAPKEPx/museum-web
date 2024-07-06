@@ -24,7 +24,7 @@ const LoginForm = () => {
             localStorage.setItem('access-token', response.data.access)
             localStorage.setItem('refresh-token', response.data.refresh)
             dispatch(setAuth(localStorage.getItem('access-token')!==null))
-            navigate('/')
+            navigate(-1)
         } catch (e) {
             if (e.response && (e.response.status === 401 || e.response.status === 400)) {
                 setIsError(true);

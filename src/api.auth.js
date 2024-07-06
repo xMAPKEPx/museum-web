@@ -18,7 +18,11 @@ export const login = (email, password) => {
 export const refreshToken = () => {
     return instance.post("/auth/api/token/refresh/", {
         refresh: localStorage.getItem("refresh-token")
-    });
+    }).then((response) => {
+        if (response.status === 401) {
+            window.location.assign("/login")
+        }
+    }).catch(err => console.log('Error: ', err))
 }
 
 export const logout = () => {
@@ -30,7 +34,9 @@ export const getUser = (id) => {
 }
 
 export const getMyInfo = () => {
-    return instance.get(`/users/me/`)
+    console.log(localStorage)
+    return instance.get(`/users/me/`).catch(() => refreshToken())
+        .catch(err => console.log('Error: ', err));
 }
 
 export const changeMyPhoto = (photo) => {

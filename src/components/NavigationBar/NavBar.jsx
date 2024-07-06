@@ -8,6 +8,7 @@ import {setImage} from "../../redux/UserSlice/UserSlice";
 import {useNavigate} from "react-router-dom";
 
 const NavBar = () => {
+    const TEST = 'http://localhost:3000/'
     const dispatch = useDispatch()
     const isAuth = useSelector(state => state.auth.isAuth);
     const userImage = useSelector(state => state.user.image);
@@ -19,8 +20,9 @@ const NavBar = () => {
     };
     useEffect(() => {
         const fetchData = async () => {
-            const response = await getMyInfo();
-            dispatch(setImage(response.data.image_url))
+            await getMyInfo()
+                .then(res => dispatch(setImage(res.data.image_url)))
+                .catch(err => console.log('Error: ', err));
         }
         fetchData()
     }, [isAuth]);
@@ -41,7 +43,7 @@ const NavBar = () => {
                         </button>
                     </li>
                     <li>
-                        <button className={styles.navButtons} onClick={() => navigate("/")}>КОНСТРУКТОР ВЫСТАВОК
+                        <button className={styles.navButtons} onClick={() => window.location.assign(`${TEST}`)}>КОНСТРУКТОР ВЫСТАВОК
                         </button>
                     </li>
                     <li>
