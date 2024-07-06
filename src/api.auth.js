@@ -34,7 +34,6 @@ export const getUser = (id) => {
 }
 
 export const getMyInfo = () => {
-    console.log(localStorage)
     return instance.get(`/users/me/`).catch(() => refreshToken())
         .catch(err => console.log('Error: ', err));
 }
