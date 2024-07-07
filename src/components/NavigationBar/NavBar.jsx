@@ -8,7 +8,7 @@ import {setImage} from "../../redux/UserSlice/UserSlice";
 import {useNavigate} from "react-router-dom";
 
 const NavBar = () => {
-    const TEST = 'http://localhost:3000/'
+    const BASE_URL = 'https://kit.vstrechya.space/'
     const dispatch = useDispatch()
     const isAuth = useSelector(state => state.auth.isAuth);
     const userImage = useSelector(state => state.user.image);
@@ -43,7 +43,7 @@ const NavBar = () => {
                         </button>
                     </li>
                     <li>
-                        <button className={styles.navButtons} onClick={() => window.location.assign(`${TEST}`)}>КОНСТРУКТОР ВЫСТАВОК
+                        <button className={styles.navButtons} onClick={() => window.location.assign(`${BASE_URL}`)}>КОНСТРУКТОР ВЫСТАВОК
                         </button>
                     </li>
                     <li>
