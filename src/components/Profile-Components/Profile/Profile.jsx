@@ -189,12 +189,15 @@ function Profile() {
                                 </button>
                             </div>
                         </div>
-                        <button className={styles.navButton} onClick={() => navigate('/me/collections')}>К моим
-                            коллекциям
-                        </button>
-                        <button className={styles.navButton} onClick={() => window.location.assign('https://kit.vstrechya.space/me/exhibitions')}>К моим
-                            выставкам
-                        </button>
+                        <div className={styles.navContainer}>
+                            <button className={styles.navButton} onClick={() => navigate('/me/collections')}>К моим
+                                коллекциям
+                            </button>
+                            <button className={styles.navButton}
+                                    onClick={() => window.location.assign('https://kit.vstrechya.space/me/exhibitions')}>
+                                К моим выставкам
+                            </button>
+                        </div>
                         {isChanging ? <button type="submit"
                                               className={styles.profileEditButton}>Сохранить</button> :
                             <button onClick={handleClick} className={styles.profileEditButton}

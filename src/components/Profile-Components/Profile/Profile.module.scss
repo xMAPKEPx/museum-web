@@ -212,13 +212,19 @@
     padding: 6.5px 30px 6.5px 30px;
 }
 
+.navContainer {
+    position: absolute;
+    bottom: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+}
+
 .navButton {
     outline: none;
     border: none;
     background-color: transparent;
     font: 400 18px/1.22 "Montserrat", Helvetica, Arial, serif;
-    position: absolute;
-    bottom: 26px;
 }
 
 .hidden {
