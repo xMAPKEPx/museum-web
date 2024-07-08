@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Section4.module.scss';
 import plus from '../../../assets/plus_sign.png'
 
-const renderSection4 = (props) => {
+const renderSection4 = () => {
   return (
     <section className={styles.section4}>
       <div className={styles.wrapper1}>
@@ -28,7 +28,7 @@ const renderSection4 = (props) => {
                     </div>
 
                     <div className={styles.content_box}>
-                        <div className={styles.flex_col4}>
+                        <div className={styles.flex_col3}>
                             <img className={styles.image2} src={plus} alt="alt text" />
                             <p className={styles.highlight1}>описание / фотография </p>
                         </div>

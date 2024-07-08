@@ -9,7 +9,7 @@
   display: flex;
   // border: 1px solid gray;
   flex-direction: column;
-  margin: 0px auto;
+  margin: 0 auto;
   width: 100%;
   max-width: 1920px;
   background-color: rgb(255, 255, 255);
@@ -36,29 +36,28 @@
 
 .image7 {
   position: absolute;
-  top: -177px;
-  left: -680px;
-  width: 685px;
-  height: 531px;
-  object-fit: cover;
+  bottom: 0;
+  left: -784px;
+  width: 702px;
+  height: 748px;
 }
 .flex_col {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 385px 0px;
+  gap: 385px 0;
   @include md {
-    gap: 150px 0px;
+    gap: 150px 0;
   }
   @include xs {
-    gap: 80px 0px;
+    gap: 80px 0;
   }
   @include tn {
-    gap: 50px 0px;
+    gap: 50px 0;
   }
 }
 .hero_title1 {
-  font: 400 48px/1.22 "Montserrat", Helvetica, Arial, serif;
+  font: 400 48px/1.25 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
   @include md {
     align-items: flex-start;
@@ -69,10 +68,10 @@
   }
 }
 .highlight1 {
-  margin: 0px 0px 0px auto;
+  margin: 0 0 0 auto;
   width: 632px;
   max-width: 85%;
-  font: 400 18px/1.22 "Montserrat", Helvetica, Arial, serif;
+  font: 400 18px/1.27 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
   @include md {
     align-items: flex-start;

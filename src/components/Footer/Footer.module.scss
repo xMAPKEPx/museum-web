@@ -8,14 +8,14 @@
   justify-content: center; /* Выравниваем по вертикали */
   align-items: center; /* Выравниваем по горизонтали */
   min-height: 120px;
-  background-color: rgb(193, 170, 139);
+  background-color: black;
   padding: 20px;
   box-sizing: border-box;
 }
 
 .highlight {
-  font: 400 16px/1.25 "Montserrat", Helvetica, Arial, serif;
-  color: rgba(0, 0, 0, 0.658);
+  font: 400 16px/1.25 Merriweather, Helvetica, Arial, serif;
+  color: white;
   text-align: center; /* Выравниваем текст по центру */
 }
 

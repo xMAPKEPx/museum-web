@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styles from './NavBar.module.css';
-import logo from '../../assets/file.png'
+// import white_logo from '../../assets/white-icon.png'
+import black_logo from '../../assets/black-icon.png'
 import miniProfile from '../../assets/mini-profile.png'
 import {useDispatch, useSelector} from "react-redux";
 import {getMyInfo} from "../../api.auth";
@@ -29,7 +30,7 @@ const NavBar = () => {
     return <>
         <header>
             <nav className={styles.navbar}>
-                <a className={styles.home} href="/"><img src={logo} width="240" alt='Home'/> </a>
+                <a className={styles.home} href="/"><img src={black_logo} width="240" alt='Home'/> </a>
                 <ul className={`${styles.navigation} ${menuActive ? styles.active : ''}`}>
                     <li>
                         <button className={styles.navButtons} onClick={() => navigate("/exhibitions")}>КАТАЛОГ

@@ -1,7 +1,7 @@
 @use "../../utils" as *;
 @use "../../global" as *;
 
-.root {
+.section {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,11 +13,11 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  gap: 0px 10px;
+  gap: 0 10px;
   margin: 94px auto 153px;
   width: 1445.9375px;
   max-width: 85%;
-  padding: 0px 13px 0px 0px;
+  padding: 0 13px 0 0;
   @include xl {
     flex-direction: column;
     align-items: center;
@@ -31,16 +31,16 @@
   }
   @include tn {
     margin: 50px auto;
-    padding: 0px 8px 0px 0px;
+    padding: 0 8px 0 0;
   }
 }
 .flex_col {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0px 0px 188px;
+  margin: 0 0 188px;
   width: 744px;
-  min-width: 0px;
+  min-width: 0;
   @include xl {
     margin-top: unset;
     margin-bottom: unset;
@@ -50,7 +50,7 @@
 }
 .hero_title {
   position: relative;
-  font: 700 48px/1.22 "Montserrat", Helvetica, Arial, serif;
+  font: 700 48px/1.25 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
   @include md {
     align-items: flex-start;
@@ -74,8 +74,8 @@
 // }
 .big_title {
   position: relative;
-  margin: 25px 0px 0px;
-  font-family: "Montserrat", sans-serif;
+  margin: 25px 0 0;
+  font-family: Merriweather, serif;
   font-size: 34px;
   font-weight: 400;
   color: rgb(0, 0, 0);
@@ -89,23 +89,23 @@
 }
 .big_title1 {
   position: relative;
-  margin: 192px 0px 0px;
-  font: 400 34px/1.2 "Montserrat", Helvetica, Arial, serif;
+  margin: 192px 0 0;
+  font: 400 34px/1.2 Merriweather, Helvetica, Arial, serif;
   font-style: italic;
   color: rgb(0, 0, 0);
   @include md {
     align-items: flex-start;
-    margin: 150px 0px 0px;
+    margin: 150px 0 0;
     font-size: 32px;
   }
   @include xs {
-    margin: 80px 0px 0px;
+    margin: 80px 0 0;
   }
   @include xxs {
     font-size: 28px;
   }
   @include tn {
-    margin: 50px 0px 0px;
+    margin: 50px 0 0;
   }
 }
 
@@ -113,11 +113,11 @@
   position: relative;
   display: grid;
   align-content: start;
-  row-gap: 45px;
+  row-gap: 25px;
   column-gap: 43px;
-  margin: 84px 0px 0px;
+  margin: 84px 0 0;
   width: 643px;
-  min-width: 0px;
+  min-width: 0;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   @include xl {
     margin-top: unset;
@@ -140,7 +140,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px 0px;
+  gap: 15px 0;
   grid-row: span 1;
   grid-column: span 1;
 }
@@ -151,7 +151,7 @@
 }
 .highlight {
   position: relative;
-  font: 700 18px/1.22 "Montserrat", Helvetica, Arial, serif;
+  font: 700 18px/1.22 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
   @include md {
     align-items: flex-start;
@@ -163,7 +163,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 31px 0px;
+  gap: 31px 0;
   grid-row: span 1;
   grid-column: span 1;
 }

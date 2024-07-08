@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   min-height: 1079px;
+  background-color: whitesmoke;
 }
 
 .wrapper {
@@ -35,7 +36,7 @@
 }
 
 .hero_title {
-  font: 700 48px/1.22 "Montserrat", Helvetica, Arial, serif;
+  font: 700 48px/1.22 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
 
   @media (max-width: 768px) {
@@ -53,7 +54,7 @@
 }
 
 .big_title {
-  font: 400 34px/1.2 "Montserrat", Helvetica, Arial, serif;
+  font: 400 34px/1.2 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
 
   @media (max-width: 768px) {
@@ -64,7 +65,7 @@
 
 .big_title_box {
   position: absolute;
-  top: 275px;
+  top: 375px;
   right: 234px;
   width: 63%;
   height: auto;
@@ -81,11 +82,11 @@
 .big_title_span2,
 .big_title_span4,
 .big_title_span6 {
-  font: 1em/1.2 "Montserrat", Helvetica, Arial, serif;
+  font: 1em/1.2 Merriweather, Helvetica, Arial, serif;
 }
 
 .big_title_span1,
 .big_title_span3,
 .big_title_span5 {
-  font: italic 600 1em/1.2 "Montserrat", Helvetica, Arial, serif;
+  font: italic 600 1em/1.2 Merriweather, Helvetica, Arial, serif;
 }

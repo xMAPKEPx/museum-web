@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   min-height: 1081px;
+  background-color: whitesmoke;
 }
 .wrapper1 {
   display: flex;
@@ -18,25 +19,25 @@
 .flex_col {
   display: flex;
   flex-direction: column;
-  margin: 64px 0px 0px 12.34%;
+  margin: 64px 0 0 12.34%;
   width: 1293px;
   max-width: 85%;
   @include xxl {
-    margin: 64px auto 0px;
+    margin: 64px auto 0;
   }
   @include tn {
-    margin: 50px auto 0px;
+    margin: 50px auto 0;
   }
 }
 .flex_col1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px 0px;
+  gap: 30px 0;
 }
 .hero_title {
   width: 100%;
-  font: 700 48px/1.22 "Montserrat", Helvetica, Arial, serif;
+  font: 700 48px/1.22 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
   @include md {
     align-items: flex-start;
@@ -47,7 +48,7 @@
   }
 }
 .big_title {
-  font: 400 34px/1.2 "Montserrat", Helvetica, Arial, serif;
+  font: 400 34px/1.2 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
   @include md {
     align-items: flex-start;
@@ -61,19 +62,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px 0px;
-  margin: 50px 11.99% 0px auto;
+  gap: 20px 0;
+  margin: 50px 11.99% 0 auto;
   width: 827px;
   max-width: 85%;
   @include xl {
-    margin: 50px auto 0px;
+    margin: 50px auto 0;
   }
 }
 .title {
   display: flex;
   justify-content: center;
   width: 450px;
-  font: 400 32px/1.21 "Montserrat", Helvetica, Arial, serif;
+  font: 400 32px/1.21 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
   text-align: right;
   background-color: rgb(233, 233, 233);
@@ -97,7 +98,7 @@
 .flex_row {
   display: flex;
   align-items: center;
-  gap: 0px 20px;
+  gap: 0 20px;
   width: 99.15%;
   @include sm {
     flex-direction: column;
@@ -108,7 +109,7 @@
   display: flex;
   flex-direction: column;
   width: 400px;
-  min-width: 0px;
+  min-width: 0;
   background-color: rgb(233, 233, 233);
   @include sm {
     margin-top: unset;
@@ -120,7 +121,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 69px 0px;
+  gap: 69px 0;
   margin: 150px auto 59px;
   width: 217px;
   max-width: 85%;
@@ -128,7 +129,7 @@
     margin: 80px auto 59px;
   }
   @include tn {
-    gap: 50px 0px;
+    gap: 50px 0;
     margin: 50px auto;
   }
 }
@@ -139,33 +140,18 @@
   object-fit: cover;
 }
 .highlight1 {
-  font: 400 18px/1.22 "Montserrat", Helvetica, Arial, serif;
+  font: 400 18px/1.22 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
   @include md {
     align-items: flex-start;
     font-size: 16px;
   }
 }
-.flex_col4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 72px 0px;
-  margin: 147px auto 59px;
-  width: 217px;
-  max-width: 85%;
-  @include xs {
-    margin: 80px auto 59px;
-  }
-  @include tn {
-    gap: 50px 0px;
-    margin: 50px auto;
-  }
-}
+
 .title1 {
-  margin: 77px 13px 0px auto;
+  margin: 77px 13px 0 auto;
   width: 87.16%;
-  font: 400 32px/1.21 "Montserrat", Helvetica, Arial, serif;
+  font: 400 32px/1.21 Merriweather, Helvetica, Arial, serif;
   color: rgb(0, 0, 0);
   @include md {
     align-items: flex-start;
@@ -175,6 +161,6 @@
     font-size: 26px;
   }
   @include tn {
-    margin: 50px 8px 0px auto;
+    margin: 50px 8px 0 auto;
   }
 }

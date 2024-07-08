@@ -5,9 +5,9 @@ import image2 from '../../../assets/antique_silver_plate.png'
 import image3 from '../../../assets/green_ceramic_urn_museum.png'
 import image4 from '../../../assets/bronze_bird_sculpture.png'
 
-function Section2(props) {
+function Section2() {
     return (
-      <div>
+      <div className={styles.section}>
         <div className={styles.flex_row}>
           <div className={styles.flex_col}>
             <h1 className={styles.hero_title}>Каталог выставок</h1>
@@ -27,7 +27,7 @@ function Section2(props) {
               <h4 className={styles.highlight}>Описание фотографии</h4>
             </div>
   
-            <div className={styles.item1}>
+            <div className={styles.item}>
               <img className={styles.image1} src={image2} alt="alt text" />
               <h4 className={styles.highlight}>Описание фотографии </h4>
             </div>
