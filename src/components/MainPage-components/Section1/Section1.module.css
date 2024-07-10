@@ -1,0 +1,119 @@
+.section1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1920px;
+    background-color: rgb(255, 255, 255);
+    background: url(../../../assets/1st_background.png) center center/100% 100% no-repeat;
+    overflow: hidden;
+}
+
+.group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 467px 3.13% 125px auto;
+    width: 988px;
+    max-width: 85%;
+}
+
+@media (max-width: 991px) {
+    .group {
+        margin: 150px 3.13% 125px auto;
+    }
+}
+
+@media (max-width: 575px) {
+    .group {
+        margin: 80px 3.13% 80px auto;
+    }
+}
+
+@media (max-width: 383px) {
+    .group {
+        margin: 50px 3.13% 50px auto;
+    }
+}
+
+.image7 {
+    position: absolute;
+    bottom: 0;
+    left: -784px;
+    width: 702px;
+    height: 748px;
+}
+
+.flex_col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 385px 0;
+}
+
+@media (max-width: 991px) {
+    .flex_col {
+        gap: 150px 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .flex_col {
+        gap: 80px 0;
+    }
+}
+
+@media (max-width: 383px) {
+    .flex_col {
+        gap: 50px 0;
+    }
+}
+
+.hero_title1 {
+    font: 400 48px/1.25 Merriweather, Helvetica, Arial, serif;
+    color: rgb(0, 0, 0);
+}
+
+@media (max-width: 991px) {
+    .hero_title1 {
+        align-items: flex-start;
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 479px) {
+    .hero_title1 {
+        font-size: 36px;
+    }
+}
+
+.highlight1 {
+    margin: 0 0 0 auto;
+    width: 632px;
+    max-width: 85%;
+    font: 400 18px/1.27 Merriweather, Helvetica, Arial, serif;
+    color: rgb(0, 0, 0);
+}
+
+@media (max-width: 991px) {
+    .highlight1 {
+        align-items: flex-start;
+        font-size: 16px;
+    }
+}
+
+.image8 {
+    position: absolute;
+    top: -124px;
+    left: -736px;
+    width: 418px;
+    height: 612px;
+    object-fit: cover;
+}
+
+/*# sourceMappingURL=Section1.module.css.map */
